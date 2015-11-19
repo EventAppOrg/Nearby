@@ -14,7 +14,7 @@ The following **required** functionality will be completed
 * [ ] User can go to the event detail page where one can view list of users, location and other info
 * [ ] User can view the events in a map view
 
-The following **optional** features are implemented:
+The following **optional** features will be implemented:
 * [ ] Users can send friend requests
 * [ ] Users can chat inside events
   * [ ] Users can post photos
