@@ -21,3 +21,6 @@ The following **optional** features will be implemented:
 * [ ] Users can swipe to RSVP an event
 * [ ] Users can customize the response
 * [ ] Users can peek an event for preview and pop to go to the event detail
+
+## Wireframe
+<img src='Wireframe.png' title='Wireframe' width='' alt='Wireframe' />
