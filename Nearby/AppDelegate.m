@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "Event.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +19,40 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    // set up Parse
+    [Event registerSubclass];
+    [Parse setApplicationId:@"5PZvauqNAjxtcB7lhCTdZNqAaruKf8PiKBBnWzmC" clientKey:@"ACefcDZXlXeBdKNncMZIoUthCTtJeiKFDPBEt6ar"];
+    
+    /* Use PFUser for signing up/logging in
+    PFUser *u = [[PFUser alloc] init];
+    [u setUsername:@"pf_user"];
+    [u setPassword:@"secret"];
+    [u signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Signed up suer!");
+        } else {
+            NSLog(@"Failed: %@", error);
+        }
+    }];*/
+    
+    // example for saving custom class - uncomment to test
+    /*Event *e = [[Event alloc] init];
+    [e setEventName:@"coolest event"];
+    [e saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Saved event!");
+        } else {
+            NSLog(@"Failed: %@", error);
+        }
+    }];*/
+
+    LoginViewController *lvc = [[LoginViewController alloc] init];
+    self.window.rootViewController = lvc;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

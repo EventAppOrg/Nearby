@@ -8,27 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		1E666B5FC70ABC9F5C6BB5BC /* libPods-Nearby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */; };
+		B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31E18B81C053B5700977D55 /* LoginViewController.m */; };
+		B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31E18B91C053B5700977D55 /* LoginViewController.xib */; };
 		B32248F21BFE3E9E005B48BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B32248F11BFE3E9E005B48BC /* main.m */; };
 		B32248F51BFE3E9E005B48BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B32248F41BFE3E9E005B48BC /* AppDelegate.m */; };
-		B32248F81BFE3E9E005B48BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32248F71BFE3E9E005B48BC /* ViewController.m */; };
-		B32248FB1BFE3E9E005B48BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32248F91BFE3E9E005B48BC /* Main.storyboard */; };
 		B32248FD1BFE3E9E005B48BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B32248FC1BFE3E9E005B48BC /* Assets.xcassets */; };
 		B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32248FE1BFE3E9E005B48BC /* LaunchScreen.storyboard */; };
+		B363A8071C0543ED00C81993 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = B363A8061C0543ED00C81993 /* Event.m */; };
+		B363A80B1C054CB200C81993 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B363A8091C054CB200C81993 /* EventViewController.m */; };
+		B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B363A80A1C054CB200C81993 /* EventViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nearby.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C56A3D465359FE72328E9DF /* Pods-Nearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearby/Pods-Nearby.release.xcconfig"; sourceTree = "<group>"; };
+		B31E18B71C053B5700977D55 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B31E18B81C053B5700977D55 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B31E18B91C053B5700977D55 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		B32248ED1BFE3E9E005B48BC /* Nearby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nearby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32248F11BFE3E9E005B48BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B32248F31BFE3E9E005B48BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B32248F41BFE3E9E005B48BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B32248F61BFE3E9E005B48BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B32248F71BFE3E9E005B48BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B32248FA1BFE3E9E005B48BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B32248FC1BFE3E9E005B48BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B32248FF1BFE3E9E005B48BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B32249011BFE3E9E005B48BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B363A8051C0543ED00C81993 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		B363A8061C0543ED00C81993 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		B363A8081C054CB200C81993 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		B363A8091C054CB200C81993 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		B363A80A1C054CB200C81993 /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
 		BC79EDFC81497AD7E843B2CA /* Pods-Nearby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearby/Pods-Nearby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +69,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B31E18B61C053B4100977D55 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B31E18B71C053B5700977D55 /* LoginViewController.h */,
+				B31E18B81C053B5700977D55 /* LoginViewController.m */,
+				B31E18B91C053B5700977D55 /* LoginViewController.xib */,
+				B363A8081C054CB200C81993 /* EventViewController.h */,
+				B363A8091C054CB200C81993 /* EventViewController.m */,
+				B363A80A1C054CB200C81993 /* EventViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B32248E41BFE3E9E005B48BC = {
 			isa = PBXGroup;
 			children = (
@@ -82,11 +103,10 @@
 		B32248EF1BFE3E9E005B48BC /* Nearby */ = {
 			isa = PBXGroup;
 			children = (
+				B363A8041C05438700C81993 /* Model */,
+				B31E18B61C053B4100977D55 /* ViewControllers */,
 				B32248F31BFE3E9E005B48BC /* AppDelegate.h */,
 				B32248F41BFE3E9E005B48BC /* AppDelegate.m */,
-				B32248F61BFE3E9E005B48BC /* ViewController.h */,
-				B32248F71BFE3E9E005B48BC /* ViewController.m */,
-				B32248F91BFE3E9E005B48BC /* Main.storyboard */,
 				B32248FC1BFE3E9E005B48BC /* Assets.xcassets */,
 				B32248FE1BFE3E9E005B48BC /* LaunchScreen.storyboard */,
 				B32249011BFE3E9E005B48BC /* Info.plist */,
@@ -101,6 +121,15 @@
 				B32248F11BFE3E9E005B48BC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B363A8041C05438700C81993 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B363A8051C0543ED00C81993 /* Event.h */,
+				B363A8061C0543ED00C81993 /* Event.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +192,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */,
+				B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
 				B32248FD1BFE3E9E005B48BC /* Assets.xcassets in Resources */,
-				B32248FB1BFE3E9E005B48BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B32248F81BFE3E9E005B48BC /* ViewController.m in Sources */,
+				B363A8071C0543ED00C81993 /* Event.m in Sources */,
+				B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */,
+				B363A80B1C054CB200C81993 /* EventViewController.m in Sources */,
 				B32248F51BFE3E9E005B48BC /* AppDelegate.m in Sources */,
 				B32248F21BFE3E9E005B48BC /* main.m in Sources */,
 			);
@@ -233,14 +265,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B32248F91BFE3E9E005B48BC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B32248FA1BFE3E9E005B48BC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B32248FE1BFE3E9E005B48BC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -339,6 +363,10 @@
 			baseConfigurationReference = BC79EDFC81497AD7E843B2CA /* Pods-Nearby.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Nearby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EventAppOrg.Nearby;
@@ -351,6 +379,10 @@
 			baseConfigurationReference = 4C56A3D465359FE72328E9DF /* Pods-Nearby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Nearby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EventAppOrg.Nearby;
