@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E666B5FC70ABC9F5C6BB5BC /* libPods-Nearby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */; };
+		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31E18B81C053B5700977D55 /* LoginViewController.m */; };
 		B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31E18B91C053B5700977D55 /* LoginViewController.xib */; };
 		B32248F21BFE3E9E005B48BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B32248F11BFE3E9E005B48BC /* main.m */; };
@@ -22,6 +24,9 @@
 /* Begin PBXFileReference section */
 		2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nearby.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C56A3D465359FE72328E9DF /* Pods-Nearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearby/Pods-Nearby.release.xcconfig"; sourceTree = "<group>"; };
+		8A814A881C062188005ED55E /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
+		8A814A891C062188005ED55E /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
+		8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 		B31E18B71C053B5700977D55 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B31E18B81C053B5700977D55 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B31E18B91C053B5700977D55 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -69,6 +74,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8A814A871C062164005ED55E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A814A881C062188005ED55E /* EventsTableViewCell.h */,
+				8A814A891C062188005ED55E /* EventsTableViewCell.m */,
+				8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		B31E18B61C053B4100977D55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +118,7 @@
 		B32248EF1BFE3E9E005B48BC /* Nearby */ = {
 			isa = PBXGroup;
 			children = (
+				8A814A871C062164005ED55E /* View */,
 				B363A8041C05438700C81993 /* Model */,
 				B31E18B61C053B4100977D55 /* ViewControllers */,
 				B32248F31BFE3E9E005B48BC /* AppDelegate.h */,
@@ -192,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */,
 				B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */,
 				B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
@@ -256,6 +273,7 @@
 			files = (
 				B363A8071C0543ED00C81993 /* Event.m in Sources */,
 				B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */,
+				8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */,
 				B363A80B1C054CB200C81993 /* EventViewController.m in Sources */,
 				B32248F51BFE3E9E005B48BC /* AppDelegate.m in Sources */,
 				B32248F21BFE3E9E005B48BC /* main.m in Sources */,
@@ -368,9 +386,11 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Nearby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EventAppOrg.Nearby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -384,9 +404,11 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Nearby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EventAppOrg.Nearby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

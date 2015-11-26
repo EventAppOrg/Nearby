@@ -7,6 +7,7 @@
 //
 
 #import "EventViewController.h"
+#import "EventsTableViewCell.h"
 #import "Event.h"
 
 @interface EventViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -21,7 +22,9 @@
 - (void)viewDidLoad {
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
+    [self.tableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventCell"];
+    self.tableView.estimatedRowHeight = 120;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     // later we will need to include filters etc.
     [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
         self.events = events;
@@ -42,15 +45,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Getting cell");
     
-    // replace with proper cell setup
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"EventCell"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
+    EventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell"];
     Event *event = [self.events objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = event.eventName;
+    cell.event = event;
     return cell;
 }
 
