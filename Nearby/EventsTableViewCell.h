@@ -13,6 +13,7 @@
 @interface EventsTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) Event *event;
-@property (nonatomic, strong) NSArray *eventUsers;
+@property (nonatomic, strong) NSArray *confirmedUsers;
+@property (nonatomic, strong) NSArray *maybeUsers;
 
 @end

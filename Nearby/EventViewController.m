@@ -82,7 +82,7 @@
     Event *event = [self.events objectAtIndex:indexPath.row];
     cell.event = event;
     [EventUser getEventUserForEvent:event withStatus:@1 completion:^(NSArray *eventUsers, NSError *error) {
-        cell.eventUsers = eventUsers;
+        cell.confirmedUsers = eventUsers;
     }];
     return cell;
 }

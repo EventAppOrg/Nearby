@@ -49,9 +49,9 @@
 //    self.dateTimeLabel.text = event.eventDate;
 }
 
-- (void) setEventUsers:(NSArray *)eventUsers {
-    _eventUsers = eventUsers;
-    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%@ going", [NSNumber numberWithInteger:eventUsers.count]];
+- (void) setConfirmedUsers:(NSArray *)confirmedUsers {
+    _confirmedUsers = confirmedUsers;
+    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%@ going", [NSNumber numberWithInteger:confirmedUsers.count]];
 }
 
 @end
