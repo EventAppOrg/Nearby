@@ -18,6 +18,18 @@
     return @"EventUser";
 }
 
++ (void) getEventUser:(PFUser *)user forEvent:(Event *) event completion:(void (^)(EventUser *eventUser, NSError *error))completion {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"event = %@ AND user = %@ ", event, user];
+    PFQuery *query = [EventUser queryWithPredicate:predicate];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (!error) {
+            completion((EventUser*)object, nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
 + (void)createEventUser:(PFUser *)user forEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(BOOL succeeded, NSError *error))completion {
     EventUser *eventUser = [[EventUser alloc] init];
     eventUser.event = event;

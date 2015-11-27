@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "Event.h"
+#import "EventUser.h"
 
 @interface EventUser : PFObject <PFSubclassing>
 
@@ -17,6 +18,8 @@
 @property (retain) Event *event;
 
 @property (retain) NSNumber *status;
+
++ (void) getEventUser:(PFUser *)user forEvent:(Event *) event completion:(void (^)(EventUser *eventUser, NSError *error))completion;
 
 + (void)createEventUser:(PFUser *)user forEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(BOOL succeeded, NSError *error))completion;
 
