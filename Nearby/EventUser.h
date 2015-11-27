@@ -21,6 +21,8 @@
 
 + (void) getEventUser:(PFUser *)user forEvent:(Event *) event completion:(void (^)(EventUser *eventUser, NSError *error))completion;
 
-+ (void)createEventUser:(PFUser *)user forEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(BOOL succeeded, NSError *error))completion;
++ (void)updateEventUser:(EventUser *) eventUser withStatus:(NSNumber *) status completion:(void (^)(EventUser * eventUser, NSError *error))completion;
+
++ (void)createEventUser:(PFUser *)user forEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(EventUser * eventUser, NSError *error))completion;
 
 @end
