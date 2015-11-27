@@ -10,8 +10,8 @@
 		1E666B5FC70ABC9F5C6BB5BC /* libPods-Nearby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */; };
 		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; };
 		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; };
-		8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		8AEC81E11C07E5C7003835DE /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEC81DF1C07E5C7003835DE /* EventDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */; };
+		8AEC81E11C07E5C7003835DE /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEC81DF1C07E5C7003835DE /* EventDetailViewController.xib */; };
 		B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31E18B81C053B5700977D55 /* LoginViewController.m */; };
 		B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31E18B91C053B5700977D55 /* LoginViewController.xib */; };
 		B32248F21BFE3E9E005B48BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B32248F11BFE3E9E005B48BC /* main.m */; };
@@ -23,6 +23,8 @@
 		B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B363A80A1C054CB200C81993 /* EventViewController.xib */; };
 		B3BB8F231C07C9AB0093BEDD /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BB8F211C07C9AB0093BEDD /* SignupViewController.m */; };
 		B3BB8F241C07C9AB0093BEDD /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BB8F221C07C9AB0093BEDD /* SignupViewController.xib */; };
+		B3BB8F2D1C07EBAE0093BEDD /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BB8F2B1C07EBAE0093BEDD /* AddEventViewController.m */; };
+		B3BB8F2E1C07EBAE0093BEDD /* AddEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BB8F2C1C07EBAE0093BEDD /* AddEventViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,9 @@
 		B3BB8F201C07C9AB0093BEDD /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		B3BB8F211C07C9AB0093BEDD /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		B3BB8F221C07C9AB0093BEDD /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		B3BB8F2A1C07EBAE0093BEDD /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		B3BB8F2B1C07EBAE0093BEDD /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
+		B3BB8F2C1C07EBAE0093BEDD /* AddEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
 		BC79EDFC81497AD7E843B2CA /* Pods-Nearby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearby/Pods-Nearby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +114,9 @@
 				8AEC81DD1C07E5C7003835DE /* EventDetailViewController.h */,
 				8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */,
 				8AEC81DF1C07E5C7003835DE /* EventDetailViewController.xib */,
+				B3BB8F2A1C07EBAE0093BEDD /* AddEventViewController.h */,
+				B3BB8F2B1C07EBAE0093BEDD /* AddEventViewController.m */,
+				B3BB8F2C1C07EBAE0093BEDD /* AddEventViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 				B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */,
 				B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
+				B3BB8F2E1C07EBAE0093BEDD /* AddEventViewController.xib in Resources */,
 				B32248FD1BFE3E9E005B48BC /* Assets.xcassets in Resources */,
 				8AEC81E11C07E5C7003835DE /* EventDetailViewController.xib in Resources */,
 			);
@@ -297,6 +306,7 @@
 				B32248F51BFE3E9E005B48BC /* AppDelegate.m in Sources */,
 				B3BB8F231C07C9AB0093BEDD /* SignupViewController.m in Sources */,
 				B32248F21BFE3E9E005B48BC /* main.m in Sources */,
+				B3BB8F2D1C07EBAE0093BEDD /* AddEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "EventViewController.h"
 #import "EventsTableViewCell.h"
 #import "LoginViewController.h"
+#import "AddEventViewController.h"
 #import "Event.h"
 #import "EventDetailViewController.h"
 
@@ -24,6 +25,7 @@
 - (void)viewDidLoad {
     self.title = @"Nearby";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out" style:UIBarButtonItemStyleDone target:self action:@selector(logOut)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEvent)];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -38,6 +40,12 @@
     }];
     
     [super viewDidLoad];
+}
+
+- (void)addEvent {
+    AddEventViewController *aevc = [[AddEventViewController alloc] init];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationController pushViewController:aevc animated:YES];
 }
 
 - (void)logOut {
