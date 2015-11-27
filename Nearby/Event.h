@@ -18,6 +18,8 @@
 @property (retain) NSNumber *distance;
 @property (retain) NSString *category;
 @property (retain) NSString *imageUrl;
+@property (retain) NSString *description;
+@property (retain) NSNumber *isPrivate;
 @property (retain) NSNumber *maybeCount;
 @property (retain) NSArray *eventUsers;
 

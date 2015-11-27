@@ -7,6 +7,7 @@
 //
 
 #import "AddEventViewController.h"
+#import "Event.h"
 #import <Parse/Parse.h>
 
 @interface AddEventViewController ()
@@ -40,7 +41,28 @@ UITextField *activeField;
 }
 
 - (void)addEvent {
-    // add relation between self and event as going
+    // TODO: add relation between self and event as going
+    // TODO: add image
+    // TODO: add invitees
+    Event *newEvent = [[Event alloc] init];
+    if ([self.eventNameTextField.text isEqualToString:@""]) {
+        return;
+    }
+    [newEvent setOwner:[PFUser currentUser]];
+    [newEvent setEventName:self.eventNameTextField.text];
+    [newEvent setAddress:self.addressTextField.text];
+    [newEvent setCategory:self.categoryTextField.text];
+    [newEvent setDescription:self.descriptionTextField.text];
+    [newEvent setIsPrivate:[NSNumber numberWithBool:self.privateSwitch.isOn]];
+    [newEvent setEventDate:[self.datePicker date]];
+    [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Saved event!");
+            // TODO: show event details
+        } else {
+            NSLog(@"Failed: %@", error);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
