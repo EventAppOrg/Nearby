@@ -23,6 +23,10 @@
 
 + (void)updateEventUser:(EventUser *) eventUser withStatus:(NSNumber *) status completion:(void (^)(EventUser * eventUser, NSError *error))completion;
 
++ (void) getEventUserForEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(NSArray *eventUsers, NSError *error))completion;
+
++ (void) getEventUserForEvent:(Event *) event completion:(void (^)(NSArray *eventUsers, NSError *error))completion;
+
 + (void)createEventUser:(PFUser *)user forEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(EventUser * eventUser, NSError *error))completion;
 
 @end

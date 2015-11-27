@@ -37,7 +37,7 @@
     _event = event;
     self.eventTitleLabel.text = event.eventName;
     self.addressLabel.text = event.address;
-    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%@ going", [event.confirmedCount stringValue]];
+//    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%@ going", [event.confirmedCount stringValue]];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"d MMM yyyy";
     NSString *dateValue = [formatter stringFromDate:event.eventDate];
@@ -47,6 +47,11 @@
     NSURL *url = [NSURL URLWithString:event.imageUrl];
     [self.eventImageView setImageWithURL:url];
 //    self.dateTimeLabel.text = event.eventDate;
+}
+
+- (void) setEventUsers:(NSArray *)eventUsers {
+    _eventUsers = eventUsers;
+    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%@ going", [NSNumber numberWithInteger:eventUsers.count]];
 }
 
 @end

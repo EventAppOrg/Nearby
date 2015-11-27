@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
+#import "EventUser.h"
 
 @interface EventsTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) Event *event;
+@property (nonatomic, strong) NSArray *eventUsers;
 
 @end
