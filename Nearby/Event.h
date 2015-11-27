@@ -18,6 +18,7 @@
 @property (retain) NSNumber *distance;
 @property (retain) NSString *category;
 @property (retain) NSString *imageUrl;
+@property (retain) NSNumber *maybeCount;
 
 + (NSString *)parseClassName;
 + (void)getEventsForUser:(PFUser *)user completion:(void (^)(NSArray *events, NSError *error))completion;

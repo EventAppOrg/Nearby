@@ -75,6 +75,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     EventDetailViewController *detailController = [[EventDetailViewController alloc] init];
+    Event *event = [self.events objectAtIndex:indexPath.row];
+    detailController.event = event;
     [self.navigationController pushViewController:detailController animated:YES];
 }
 
