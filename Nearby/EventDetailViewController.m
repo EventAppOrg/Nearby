@@ -28,10 +28,7 @@
     [self updateView];
     [EventUser getEventUser:[PFUser currentUser] forEvent:_event completion:^(EventUser *eventUser, NSError *error) {
         self.eventUser = eventUser;
-        if(self.eventUser) {
-            NSInteger status = [eventUser.status integerValue] - 1;
-            [self.userStatusControl setSelectedSegmentIndex:status];
-        }
+        [self updateView];
     }];
     // Do any additional setup after loading the view from its nib.
 }
@@ -44,10 +41,13 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"d MMM yyyy";
     NSString *dateValue = [formatter stringFromDate:_event.eventDate];
-    NSLog(@"test %@", dateValue);
     self.eventDateLabel.text = dateValue;
     NSURL *url = [NSURL URLWithString:_event.imageUrl];
     [self.eventImageView setImageWithURL:url];
+    if(self.eventUser) {
+        NSInteger status = [self.eventUser.status integerValue] - 1;
+        [self.userStatusControl setSelectedSegmentIndex:status];
+    }
 
 }
 
@@ -64,7 +64,6 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"d MMM yyyy";
     NSString *dateValue = [formatter stringFromDate:event.eventDate];
-    NSLog(@"test %@", dateValue);
     self.eventDateLabel.text = dateValue;
     NSURL *url = [NSURL URLWithString:event.imageUrl];
     [self.eventImageView setImageWithURL:url];
@@ -74,14 +73,25 @@
 - (IBAction)onEventUserStatusChanged:(UISegmentedControl *)sender {
     NSNumber *status = [NSNumber numberWithInteger:self.userStatusControl.selectedSegmentIndex + 1];
     PFUser *currentUser = [PFUser currentUser];
-    [EventUser createEventUser:currentUser forEvent:self.event withStatus:status completion:^(BOOL succeeded, NSError *error) {
-        if(succeeded){
-            NSLog(@"Successful");
-        } else {
-            NSLog(@"Not Successful");
-        }
-    }];
-    NSLog(@"user changed %ld", (long)self.userStatusControl.selectedSegmentIndex);
+    if(!self.eventUser) {
+        [EventUser createEventUser:currentUser forEvent:self.event withStatus:status completion:^(EventUser *eventUser, NSError *   error) {
+            if(!error){
+                self.eventUser = eventUser;
+                [self updateView];
+            } else {
+            }
+        }];
+    } else {
+        [EventUser updateEventUser:self.eventUser withStatus:status completion:^(EventUser *eventUser, NSError *error) {
+            if(eventUser) {
+                NSLog(@"Successfully updated status");
+                self.eventUser = eventUser;
+                [self updateView];
+            } else {
+                NSLog(@"Status update was not successful");
+            }
+        }];
+    }
 }
 
 /*

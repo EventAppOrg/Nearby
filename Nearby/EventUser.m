@@ -30,13 +30,24 @@
     }];
 }
 
-+ (void)createEventUser:(PFUser *)user forEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(BOOL succeeded, NSError *error))completion {
++ (void)updateEventUser:(EventUser *) eventUser withStatus:(NSNumber *) status completion:(void (^)(EventUser * eventUser, NSError *error))completion {
+    eventUser.status = status;
+    [eventUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(succeeded) {
+            completion(eventUser, nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
++ (void)createEventUser:(PFUser *)user forEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(EventUser *eventUser, NSError *error))completion {
     EventUser *eventUser = [[EventUser alloc] init];
     eventUser.event = event;
     eventUser.user = user;
     eventUser.status = status;
     [eventUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        completion(succeeded, error);
+        completion(eventUser, error);
     }];
 }
 
