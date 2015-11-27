@@ -12,6 +12,12 @@
 
 @property (retain) PFUser *owner;
 @property (retain) NSString *eventName;
+@property (retain) NSString *address;
+@property (retain) NSDate *eventDate;
+@property (retain) NSNumber *confirmedCount;
+@property (retain) NSNumber *distance;
+@property (retain) NSString *category;
+@property (retain) NSString *imageUrl;
 
 + (NSString *)parseClassName;
 + (void)getEventsForUser:(PFUser *)user completion:(void (^)(NSArray *events, NSError *error))completion;
