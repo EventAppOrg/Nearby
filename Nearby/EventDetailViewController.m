@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *maybeCountLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *userStatusControl;
 @property (nonatomic, strong) EventUser *eventUser;
+@property (nonatomic) NSInteger confirmedUsers;
 @end
 
 @implementation EventDetailViewController
@@ -28,6 +29,14 @@
     [self updateView];
     [EventUser getEventUser:[PFUser currentUser] forEvent:_event completion:^(EventUser *eventUser, NSError *error) {
         self.eventUser = eventUser;
+        [EventUser getEventUserForEvent:_event withStatus:@1 completion:^(NSArray *eventUsers, NSError *error) {
+            if(error) {
+                self.confirmedUsers = 0;
+            } else {
+                self.confirmedUsers = eventUsers.count;
+                self.confirmedCountLabel.text = [[NSNumber numberWithInteger:self.confirmedUsers] stringValue];
+            }
+        }];
         [self updateView];
     }];
     // Do any additional setup after loading the view from its nib.
@@ -36,7 +45,7 @@
 - (void) updateView {
     self.eventTitleLabel.text = _event.eventName;
     self.addressLabel.text = _event.address;
-    self.confirmedCountLabel.text = [_event.confirmedCount stringValue];
+//    self.confirmedCountLabel.text = [[NSNumber numberWithInteger:self.confirmedUsers] stringValue];
     self.maybeCountLabel.text = [_event.maybeCount stringValue];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"d MMM yyyy";

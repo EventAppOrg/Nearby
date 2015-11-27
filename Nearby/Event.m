@@ -7,6 +7,7 @@
 //
 
 #import "Event.h"
+#import "EventUser.h"
 
 @implementation Event
 
@@ -19,6 +20,7 @@
 @dynamic category;
 @dynamic imageUrl;
 @dynamic maybeCount;
+@dynamic eventUsers;
 
 + (NSString *)parseClassName {
     return @"Event";
@@ -28,8 +30,8 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"owner = %@", user];
     PFQuery *query = [Event queryWithPredicate:predicate];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//        NSMutableArray *eventAndUsers = [[NSMutableArray alloc] init];
         if (!error) {
-            NSLog(@"Found events: %@", objects);
             completion(objects, nil);
         } else {
             NSLog(@"Error: %@", error);

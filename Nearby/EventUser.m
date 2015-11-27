@@ -30,6 +30,31 @@
     }];
 }
 
++ (void) getEventUserForEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(NSArray *eventUsers, NSError *error))completion {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"event = %@ AND status = %@", event, status];
+    PFQuery *query = [EventUser queryWithPredicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if(!error) {
+            completion(objects, nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
++ (void) getEventUserForEvent:(Event *) event completion:(void (^)(NSArray *eventUsers, NSError *error))completion {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"event = %@", event];
+    PFQuery *query = [EventUser queryWithPredicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if(!error) {
+            completion(objects, nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
+
 + (void)updateEventUser:(EventUser *) eventUser withStatus:(NSNumber *) status completion:(void (^)(EventUser * eventUser, NSError *error))completion {
     eventUser.status = status;
     [eventUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {

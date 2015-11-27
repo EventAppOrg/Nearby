@@ -19,6 +19,7 @@
 @property (retain) NSString *category;
 @property (retain) NSString *imageUrl;
 @property (retain) NSNumber *maybeCount;
+@property (retain) NSArray *eventUsers;
 
 + (NSString *)parseClassName;
 + (void)getEventsForUser:(PFUser *)user completion:(void (^)(NSArray *events, NSError *error))completion;

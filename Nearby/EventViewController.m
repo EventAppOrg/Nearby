@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "AddEventViewController.h"
 #import "Event.h"
+#import "EventUser.h"
 #import "EventDetailViewController.h"
 
 @interface EventViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -34,10 +35,7 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // later we will need to include filters etc.
-    [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
-        self.events = events;
-        [self.tableView reloadData];
-    }];
+    [self updateView];
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(onRefreshed:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:refreshControl atIndex:0];
@@ -83,6 +81,9 @@
     EventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell"];
     Event *event = [self.events objectAtIndex:indexPath.row];
     cell.event = event;
+    [EventUser getEventUserForEvent:event withStatus:@1 completion:^(NSArray *eventUsers, NSError *error) {
+        cell.eventUsers = eventUsers;
+    }];
     return cell;
 }
 
