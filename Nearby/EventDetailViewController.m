@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *confirmedCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maybeCountLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *userStatusControl;
-
+@property (nonatomic, strong) EventUser *eventUser;
 @end
 
 @implementation EventDetailViewController
@@ -26,6 +26,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateView];
+    [EventUser getEventUser:[PFUser currentUser] forEvent:_event completion:^(EventUser *eventUser, NSError *error) {
+        self.eventUser = eventUser;
+        if(self.eventUser) {
+            NSInteger status = [eventUser.status integerValue] - 1;
+            [self.userStatusControl setSelectedSegmentIndex:status];
+        }
+    }];
     // Do any additional setup after loading the view from its nib.
 }
 
