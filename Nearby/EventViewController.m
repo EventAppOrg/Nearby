@@ -38,8 +38,22 @@
         self.events = events;
         [self.tableView reloadData];
     }];
-    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(onRefreshed:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:refreshControl atIndex:0];
     [super viewDidLoad];
+}
+
+- (void) onRefreshed:(UIRefreshControl*) refreshControl {
+    [self updateView];
+    [refreshControl endRefreshing];
+}
+
+- (void) updateView {
+    [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
+        self.events = events;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)addEvent {
