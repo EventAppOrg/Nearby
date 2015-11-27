@@ -10,6 +10,8 @@
 		1E666B5FC70ABC9F5C6BB5BC /* libPods-Nearby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */; };
 		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; };
 		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; };
+		8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8AEC81E11C07E5C7003835DE /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEC81DF1C07E5C7003835DE /* EventDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31E18B81C053B5700977D55 /* LoginViewController.m */; };
 		B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31E18B91C053B5700977D55 /* LoginViewController.xib */; };
 		B32248F21BFE3E9E005B48BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B32248F11BFE3E9E005B48BC /* main.m */; };
@@ -29,6 +31,9 @@
 		8A814A881C062188005ED55E /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
 		8A814A891C062188005ED55E /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
 		8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		8AEC81DD1C07E5C7003835DE /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		8AEC81DF1C07E5C7003835DE /* EventDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		B31E18B71C053B5700977D55 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B31E18B81C053B5700977D55 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B31E18B91C053B5700977D55 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -101,6 +106,9 @@
 				B3BB8F201C07C9AB0093BEDD /* SignupViewController.h */,
 				B3BB8F211C07C9AB0093BEDD /* SignupViewController.m */,
 				B3BB8F221C07C9AB0093BEDD /* SignupViewController.xib */,
+				8AEC81DD1C07E5C7003835DE /* EventDetailViewController.h */,
+				8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */,
+				8AEC81DF1C07E5C7003835DE /* EventDetailViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 				B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
 				B32248FD1BFE3E9E005B48BC /* Assets.xcassets in Resources */,
+				8AEC81E11C07E5C7003835DE /* EventDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +291,7 @@
 			files = (
 				B363A8071C0543ED00C81993 /* Event.m in Sources */,
 				B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */,
+				8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */,
 				8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */,
 				B363A80B1C054CB200C81993 /* EventViewController.m in Sources */,
 				B32248F51BFE3E9E005B48BC /* AppDelegate.m in Sources */,
