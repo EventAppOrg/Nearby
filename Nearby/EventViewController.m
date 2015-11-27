@@ -10,6 +10,7 @@
 #import "EventsTableViewCell.h"
 #import "LoginViewController.h"
 #import "Event.h"
+#import "EventDetailViewController.h"
 
 @interface EventViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -63,5 +64,10 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    EventDetailViewController *detailController = [[EventDetailViewController alloc] init];
+    [self.navigationController pushViewController:detailController animated:YES];
+}
 
 @end
