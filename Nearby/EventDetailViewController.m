@@ -28,6 +28,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateView];
+}
+
+- (void) updateView {
+    self.eventTitleLabel.text = _event.eventName;
+    self.addressLabel.text = _event.address;
+//    self.confirmedCountLabel.text = [[NSNumber numberWithInteger:self.confirmedUsers] stringValue];
+    self.maybeCountLabel.text = [_event.maybeCount stringValue];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"d MMM yyyy";
+    NSString *dateValue = [formatter stringFromDate:_event.eventDate];
+    self.eventDateLabel.text = dateValue;
+    NSURL *url = [NSURL URLWithString:_event.imageUrl];
+    [self.eventImageView setImageWithURL:url];
+    if(self.eventUser) {
+        NSInteger status = [self.eventUser.status integerValue] - 1;
+        [self.userStatusControl setSelectedSegmentIndex:status];
+    }
+    [self updateUserCount];
+}
+
+- (void) updateUserCount {
     [EventUser getEventUser:[PFUser currentUser] forEvent:_event completion:^(EventUser *eventUser, NSError *error) {
         self.eventUser = eventUser;
         [EventUser getEventUserForEvent:_event withStatus:@1 completion:^(NSArray *eventUsers, NSError *error) {
@@ -46,27 +67,7 @@
                 self.maybeCountLabel.text = [[NSNumber numberWithInteger:self.maybeUsers] stringValue];
             }
         }];
-
-        [self updateView];
     }];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void) updateView {
-    self.eventTitleLabel.text = _event.eventName;
-    self.addressLabel.text = _event.address;
-//    self.confirmedCountLabel.text = [[NSNumber numberWithInteger:self.confirmedUsers] stringValue];
-    self.maybeCountLabel.text = [_event.maybeCount stringValue];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"d MMM yyyy";
-    NSString *dateValue = [formatter stringFromDate:_event.eventDate];
-    self.eventDateLabel.text = dateValue;
-    NSURL *url = [NSURL URLWithString:_event.imageUrl];
-    [self.eventImageView setImageWithURL:url];
-    if(self.eventUser) {
-        NSInteger status = [self.eventUser.status integerValue] - 1;
-        [self.userStatusControl setSelectedSegmentIndex:status];
-    }
 
 }
 
