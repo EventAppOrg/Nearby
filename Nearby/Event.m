@@ -18,6 +18,7 @@
 @dynamic distance;
 @dynamic category;
 @dynamic imageUrl;
+@dynamic maybeCount;
 
 + (NSString *)parseClassName {
     return @"Event";
