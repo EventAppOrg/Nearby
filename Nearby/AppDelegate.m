@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "Event.h"
+#import "EventUser.h"
 #import "EventViewController.h"
 #import <Parse/Parse.h>
 
@@ -26,6 +27,7 @@
     
     // set up Parse
     [Event registerSubclass];
+    [EventUser registerSubclass];
     [Parse setApplicationId:@"5PZvauqNAjxtcB7lhCTdZNqAaruKf8PiKBBnWzmC" clientKey:@"ACefcDZXlXeBdKNncMZIoUthCTtJeiKFDPBEt6ar"];
     
     /* Use PFUser for signing up/logging in
