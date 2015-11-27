@@ -12,6 +12,12 @@
 
 @dynamic eventName;
 @dynamic owner;
+@dynamic address;
+@dynamic eventDate;
+@dynamic confirmedCount;
+@dynamic distance;
+@dynamic category;
+@dynamic imageUrl;
 
 + (NSString *)parseClassName {
     return @"Event";
