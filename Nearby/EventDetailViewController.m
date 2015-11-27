@@ -8,6 +8,7 @@
 
 #import "EventDetailViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "EventUser.h"
 
 @interface EventDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *confirmedCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maybeCountLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *userStatusControl;
 
 @end
 
@@ -61,6 +63,18 @@
     [self.eventImageView setImageWithURL:url];
 
     
+}
+- (IBAction)onEventUserStatusChanged:(UISegmentedControl *)sender {
+    NSNumber *status = [NSNumber numberWithInteger:self.userStatusControl.selectedSegmentIndex + 1];
+    PFUser *currentUser = [PFUser currentUser];
+    [EventUser createEventUser:currentUser forEvent:self.event withStatus:status completion:^(BOOL succeeded, NSError *error) {
+        if(succeeded){
+            NSLog(@"Successful");
+        } else {
+            NSLog(@"Not Successful");
+        }
+    }];
+    NSLog(@"user changed %ld", (long)self.userStatusControl.selectedSegmentIndex);
 }
 
 /*

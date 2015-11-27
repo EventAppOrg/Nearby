@@ -12,6 +12,7 @@
                 <outlet property="eventImageView" destination="lG1-AF-RgW" id="kp9-3v-Esh"/>
                 <outlet property="eventTitleLabel" destination="iyi-Cf-mUl" id="o59-gE-CYq"/>
                 <outlet property="maybeCountLabel" destination="aEB-dE-qxe" id="wz7-nP-cs2"/>
+                <outlet property="userStatusControl" destination="XHZ-FO-PlU" id="06z-wS-OgS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -101,6 +102,9 @@
                         <segment title="Maybe"/>
                         <segment title="No"/>
                     </segments>
+                    <connections>
+                        <action selector="onEventUserStatusChanged:" destination="-1" eventType="valueChanged" id="Rnn-m2-oFO"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
