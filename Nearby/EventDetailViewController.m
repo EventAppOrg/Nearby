@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *userStatusControl;
 @property (nonatomic, strong) EventUser *eventUser;
 @property (nonatomic) NSInteger confirmedUsers;
+@property (nonatomic) NSInteger maybeUsers;
 @end
 
 @implementation EventDetailViewController
@@ -37,6 +38,15 @@
                 self.confirmedCountLabel.text = [[NSNumber numberWithInteger:self.confirmedUsers] stringValue];
             }
         }];
+        [EventUser getEventUserForEvent:_event withStatus:@2 completion:^(NSArray *eventUsers, NSError *error) {
+            if(error) {
+                self.maybeUsers = 0;
+            } else {
+                self.maybeUsers = eventUsers.count;
+                self.maybeCountLabel.text = [[NSNumber numberWithInteger:self.maybeUsers] stringValue];
+            }
+        }];
+
         [self updateView];
     }];
     // Do any additional setup after loading the view from its nib.
