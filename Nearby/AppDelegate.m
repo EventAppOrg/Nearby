@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "Event.h"
+#import "EventViewController.h"
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
@@ -51,7 +52,8 @@
     }];*/
 
     LoginViewController *lvc = [[LoginViewController alloc] init];
-    self.window.rootViewController = lvc;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:lvc];
+    self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     return YES;
 }

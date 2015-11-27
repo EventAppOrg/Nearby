@@ -8,6 +8,7 @@
 
 #import "EventViewController.h"
 #import "EventsTableViewCell.h"
+#import "LoginViewController.h"
 #import "Event.h"
 
 @interface EventViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -20,11 +21,15 @@
 @implementation EventViewController
 
 - (void)viewDidLoad {
+    self.title = @"Nearby";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Log Out" style:UIBarButtonItemStyleDone target:self action:@selector(logOut)];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"EventsTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventCell"];
     self.tableView.estimatedRowHeight = 120;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     // later we will need to include filters etc.
     [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
         self.events = events;
@@ -32,6 +37,13 @@
     }];
     
     [super viewDidLoad];
+}
+
+- (void)logOut {
+    [PFUser logOut];
+    LoginViewController *lvc = [[LoginViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:lvc];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

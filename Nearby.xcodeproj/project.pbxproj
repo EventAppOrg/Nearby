@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E666B5FC70ABC9F5C6BB5BC /* libPods-Nearby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */; };
-		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; };
+		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; };
 		B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31E18B81C053B5700977D55 /* LoginViewController.m */; };
 		B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31E18B91C053B5700977D55 /* LoginViewController.xib */; };
 		B32248F21BFE3E9E005B48BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B32248F11BFE3E9E005B48BC /* main.m */; };
@@ -19,6 +19,8 @@
 		B363A8071C0543ED00C81993 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = B363A8061C0543ED00C81993 /* Event.m */; };
 		B363A80B1C054CB200C81993 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B363A8091C054CB200C81993 /* EventViewController.m */; };
 		B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B363A80A1C054CB200C81993 /* EventViewController.xib */; };
+		B3BB8F231C07C9AB0093BEDD /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BB8F211C07C9AB0093BEDD /* SignupViewController.m */; };
+		B3BB8F241C07C9AB0093BEDD /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3BB8F221C07C9AB0093BEDD /* SignupViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		B363A8081C054CB200C81993 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		B363A8091C054CB200C81993 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		B363A80A1C054CB200C81993 /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
+		B3BB8F201C07C9AB0093BEDD /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		B3BB8F211C07C9AB0093BEDD /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		B3BB8F221C07C9AB0093BEDD /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		BC79EDFC81497AD7E843B2CA /* Pods-Nearby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nearby/Pods-Nearby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +98,9 @@
 				B363A8081C054CB200C81993 /* EventViewController.h */,
 				B363A8091C054CB200C81993 /* EventViewController.m */,
 				B363A80A1C054CB200C81993 /* EventViewController.xib */,
+				B3BB8F201C07C9AB0093BEDD /* SignupViewController.h */,
+				B3BB8F211C07C9AB0093BEDD /* SignupViewController.m */,
+				B3BB8F221C07C9AB0093BEDD /* SignupViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3BB8F241C07C9AB0093BEDD /* SignupViewController.xib in Resources */,
 				8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */,
 				B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */,
 				B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */,
@@ -276,6 +285,7 @@
 				8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */,
 				B363A80B1C054CB200C81993 /* EventViewController.m in Sources */,
 				B32248F51BFE3E9E005B48BC /* AppDelegate.m in Sources */,
+				B3BB8F231C07C9AB0093BEDD /* SignupViewController.m in Sources */,
 				B32248F21BFE3E9E005B48BC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
