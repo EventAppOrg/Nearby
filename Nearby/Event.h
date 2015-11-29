@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "EventUser.h"
 
 @interface Event : PFObject <PFSubclassing>
 
@@ -25,5 +26,6 @@
 
 + (NSString *)parseClassName;
 + (void)getEventsForUser:(PFUser *)user completion:(void (^)(NSArray *events, NSError *error))completion;
++ (void)createEventUser:(PFUser *)user forEvent:(Event *) event withStatus:(NSNumber *) status completion:(void (^)(Event *eventUser, NSError *error))completion;
 
 @end

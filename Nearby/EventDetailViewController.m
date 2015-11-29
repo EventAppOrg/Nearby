@@ -33,43 +33,28 @@
 - (void) updateView {
     self.eventTitleLabel.text = _event.eventName;
     self.addressLabel.text = _event.address;
-//    self.confirmedCountLabel.text = [[NSNumber numberWithInteger:self.confirmedUsers] stringValue];
-    self.maybeCountLabel.text = [_event.maybeCount stringValue];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"status==%ld", 1];
+    NSArray *confirmedUsers = [self.event.eventUsers filteredArrayUsingPredicate:predicate];
+    NSPredicate *maybePredicate = [NSPredicate predicateWithFormat:@"status==%ld", 2];
+    NSArray *maybeUsers = [self.event.eventUsers filteredArrayUsingPredicate:maybePredicate];
+    self.confirmedCountLabel.text = [[NSNumber numberWithLong:confirmedUsers.count] stringValue];
+    self.maybeCountLabel.text = [[NSNumber numberWithLong:maybeUsers.count] stringValue];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"d MMM yyyy";
     NSString *dateValue = [formatter stringFromDate:_event.eventDate];
     self.eventDateLabel.text = dateValue;
     NSURL *url = [NSURL URLWithString:_event.imageUrl];
     [self.eventImageView setImageWithURL:url];
-    if(self.eventUser) {
-        NSInteger status = [self.eventUser.status integerValue] - 1;
+    if(self.event.eventUsers){
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"user.objectId==%@",[PFUser currentUser].objectId];
+        EventUser *eventUs = [[self.event.eventUsers filteredArrayUsingPredicate:predicate] objectAtIndex:0];
+        NSInteger status = [eventUs.status integerValue] - 1;
         [self.userStatusControl setSelectedSegmentIndex:status];
+
+        NSLog(@"%@", eventUs);
     }
-    [self updateUserCount];
 }
 
-- (void) updateUserCount {
-    [EventUser getEventUser:[PFUser currentUser] forEvent:_event completion:^(EventUser *eventUser, NSError *error) {
-        self.eventUser = eventUser;
-        [EventUser getEventUserForEvent:_event withStatus:@1 completion:^(NSArray *eventUsers, NSError *error) {
-            if(error) {
-                self.confirmedUsers = 0;
-            } else {
-                self.confirmedUsers = eventUsers.count;
-                self.confirmedCountLabel.text = [[NSNumber numberWithInteger:self.confirmedUsers] stringValue];
-            }
-        }];
-        [EventUser getEventUserForEvent:_event withStatus:@2 completion:^(NSArray *eventUsers, NSError *error) {
-            if(error) {
-                self.maybeUsers = 0;
-            } else {
-                self.maybeUsers = eventUsers.count;
-                self.maybeCountLabel.text = [[NSNumber numberWithInteger:self.maybeUsers] stringValue];
-            }
-        }];
-    }];
-
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -90,27 +75,26 @@
 
     
 }
+
 - (IBAction)onEventUserStatusChanged:(UISegmentedControl *)sender {
     NSNumber *status = [NSNumber numberWithInteger:self.userStatusControl.selectedSegmentIndex + 1];
     PFUser *currentUser = [PFUser currentUser];
-    if(!self.eventUser) {
-        [EventUser createEventUser:currentUser forEvent:self.event withStatus:status completion:^(EventUser *eventUser, NSError *   error) {
-            if(!error){
-                self.eventUser = eventUser;
+    if(self.event.eventUsers) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"user.objectId==%@",[PFUser currentUser].objectId];
+        EventUser *eventUs = [[self.event.eventUsers filteredArrayUsingPredicate:predicate] objectAtIndex:0];
+        if(eventUs) {
+            [EventUser updateEventUser:eventUs withStatus:status completion:^(EventUser *eventUser, NSError *error) {
+                if(!error) {
+                    [self updateView];
+                }
+            }];
+        } else {
+            [Event createEventUser:currentUser forEvent:self.event withStatus:status completion:^(Event *event, NSError *error) {
+                //        NSLog(@"Status success");
+                self.event = event;
                 [self updateView];
-            } else {
-            }
-        }];
-    } else {
-        [EventUser updateEventUser:self.eventUser withStatus:status completion:^(EventUser *eventUser, NSError *error) {
-            if(eventUser) {
-                NSLog(@"Successfully updated status");
-                self.eventUser = eventUser;
-                [self updateView];
-            } else {
-                NSLog(@"Status update was not successful");
-            }
-        }];
+            }];
+        }
     }
 }
 

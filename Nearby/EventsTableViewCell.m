@@ -37,7 +37,9 @@
     _event = event;
     self.eventTitleLabel.text = event.eventName;
     self.addressLabel.text = event.address;
-//    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%@ going", [event.confirmedCount stringValue]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"status==%ld", 1];
+    NSArray *confirmedUsers = [self.event.eventUsers filteredArrayUsingPredicate:predicate];
+    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%ld going", confirmedUsers.count];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"d MMM yyyy";
     NSString *dateValue = [formatter stringFromDate:event.eventDate];
@@ -51,7 +53,7 @@
 
 - (void) setConfirmedUsers:(NSArray *)confirmedUsers {
     _confirmedUsers = confirmedUsers;
-    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%@ going", [NSNumber numberWithInteger:confirmedUsers.count]];
+//    self.confirmedCountLabel.text = [NSString stringWithFormat:@"%@ going", [NSNumber numberWithInteger:confirmedUsers.count]];
 }
 
 @end
