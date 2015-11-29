@@ -81,9 +81,9 @@
     EventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell"];
     Event *event = [self.events objectAtIndex:indexPath.row];
     cell.event = event;
-    [EventUser getEventUserForEvent:event withStatus:@1 completion:^(NSArray *eventUsers, NSError *error) {
-        cell.confirmedUsers = eventUsers;
-    }];
+//    [EventUser getEventUserForEvent:event withStatus:@1 completion:^(NSArray *eventUsers, NSError *error) {
+//        cell.confirmedUsers = eventUsers;
+//    }];
     return cell;
 }
 
