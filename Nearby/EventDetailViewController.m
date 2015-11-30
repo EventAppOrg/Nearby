@@ -95,6 +95,12 @@
                 [self updateView];
             }];
         }
+    } else {
+        [Event createEventUser:currentUser forEvent:self.event withStatus:status completion:^(Event *event, NSError *error) {
+            //        NSLog(@"Status success");
+            self.event = event;
+            [self updateView];
+        }];        
     }
 }
 

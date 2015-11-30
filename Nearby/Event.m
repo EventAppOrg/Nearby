@@ -51,7 +51,12 @@
     eventUser.status = status;
     [event addObject:eventUser forKey:@"eventUsers"];
     [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        completion(event, error);
+        if(!error) {
+            completion(event, nil);
+        } else {
+            NSLog(@"Error: %@", error);
+            completion(nil, error);
+        }
     }];
 }
 
