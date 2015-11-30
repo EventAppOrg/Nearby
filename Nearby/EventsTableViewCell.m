@@ -46,7 +46,12 @@
     self.dateTimeLabel.text = dateValue;
     self.categoryLabel.text = event.category;
     self.distanceLabel.text = [NSString stringWithFormat:@"%.1f mi", [event.distance doubleValue]];
-    NSURL *url = [NSURL URLWithString:event.imageUrl];
+    NSURL *url;
+    if(event.imageUrl) {
+        url = [NSURL URLWithString:event.imageUrl];
+    } else {
+        url = [NSURL URLWithString:@"http://www.qatarvision.com/images/services/events/event-services-banner.jpg"];
+    }
     [self.eventImageView setImageWithURL:url];
 //    self.dateTimeLabel.text = event.eventDate;
 }
