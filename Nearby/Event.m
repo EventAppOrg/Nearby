@@ -29,7 +29,7 @@
 }
 
 + (void)getEventsForUser:(PFUser *)user completion:(void (^)(NSArray *events, NSError *error))completion {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"owner = %@", user];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isPrivate = nil OR isPrivate = NO"];
     PFQuery *query = [Event queryWithPredicate:predicate];
     [query includeKey:@"eventUsers"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
