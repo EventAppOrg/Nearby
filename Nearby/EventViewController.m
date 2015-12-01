@@ -42,12 +42,17 @@
     [super viewDidLoad];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void) onRefreshed:(UIRefreshControl*) refreshControl {
     [self updateView];
     [refreshControl endRefreshing];
 }
 
 - (void) updateView {
+    self.events = [[NSMutableDictionary alloc] init];
     [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
         self.events = events;
         [self.tableView reloadData];
@@ -81,9 +86,6 @@
     EventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell"];
     Event *event = [self.events objectAtIndex:indexPath.row];
     cell.event = event;
-//    [EventUser getEventUserForEvent:event withStatus:@1 completion:^(NSArray *eventUsers, NSError *error) {
-//        cell.confirmedUsers = eventUsers;
-//    }];
     return cell;
 }
 
