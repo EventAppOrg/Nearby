@@ -10,8 +10,11 @@
 #import "UIImageView+AFNetworking.h"
 #import "EventViewController.h"
 #import "EventUser.h"
+#import "ImageTableViewCell.h"
+#import "EventBasicTableViewCell.h"
+#import "EventStatsTableViewCell.h"
 
-@interface EventDetailViewController ()
+@interface EventDetailViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
@@ -20,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *maybeCountLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *userStatusControl;
 @property (nonatomic, strong) EventUser *eventUser;
+@property (weak, nonatomic) IBOutlet UITableView *detailTableView;
 @property (nonatomic) NSInteger confirmedUsers;
 @property (nonatomic) NSInteger maybeUsers;
 @end
@@ -28,7 +32,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateView];
+    [self.detailTableView registerNib:[UINib nibWithNibName:@"ImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"imageCell"];
+    [self.detailTableView registerNib:[UINib nibWithNibName:@"EventBasicTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventBasicCell"];
+    [self.detailTableView registerNib:[UINib nibWithNibName:@"EventStatsTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventStatsCell"];
+    self.detailTableView.dataSource = self;
+    self.detailTableView.rowHeight = UITableViewAutomaticDimension;
+    self.detailTableView.estimatedRowHeight = 120;
+    self.detailTableView.separatorColor = [UIColor clearColor];
+//    self.detailTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+//    [self updateView];
 }
 
 // custom back - we do not want user to back to adding new event
@@ -44,6 +56,31 @@
         }
     }
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == 0) {
+        ImageTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"imageCell"];
+        if(_event.imageUrl) {
+            cell.imageUrl = _event.imageUrl;
+        } else {
+            cell.imageUrl = @"http://www.qatarvision.com/images/services/events/event-services-banner.jpg";
+        }
+        return cell;
+    } else if(indexPath.row == 1) {
+        EventBasicTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"eventBasicCell"];
+        cell.event = _event;
+        return cell;
+    } else {
+        EventStatsTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"eventStatsCell"];
+        cell.event = _event;
+        return cell;
+    }
+}
+
 
 - (void) updateView {
     self.eventTitleLabel.text = _event.eventName;

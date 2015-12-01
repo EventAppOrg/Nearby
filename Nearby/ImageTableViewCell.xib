@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="146" id="KGk-i7-Jjw" customClass="ImageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DDY-F9-B2U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="onS-Zo-JRq"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="DDY-F9-B2U" secondAttribute="trailing" id="0pm-8j-fiR"/>
+                    <constraint firstAttribute="bottom" secondItem="DDY-F9-B2U" secondAttribute="bottom" id="1pr-gJ-oer"/>
+                    <constraint firstItem="DDY-F9-B2U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aNR-cn-9UN"/>
+                    <constraint firstItem="DDY-F9-B2U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mYr-vP-s0B"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellImageView" destination="DDY-F9-B2U" id="x1K-Y8-Ccw"/>
+            </connections>
+            <point key="canvasLocation" x="317.5" y="346"/>
+        </tableViewCell>
+    </objects>
+</document>
