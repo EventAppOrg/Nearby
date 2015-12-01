@@ -43,7 +43,13 @@
     formatter.dateFormat = @"d MMM yyyy";
     NSString *dateValue = [formatter stringFromDate:_event.eventDate];
     self.eventDateLabel.text = dateValue;
-    NSURL *url = [NSURL URLWithString:_event.imageUrl];
+//    NSURL *url = [NSURL URLWithString:_event.imageUrl];
+    NSURL *url;
+    if(_event.imageUrl) {
+        url = [NSURL URLWithString:_event.imageUrl];
+    } else {
+        url = [NSURL URLWithString:@"http://www.qatarvision.com/images/services/events/event-services-banner.jpg"];
+    }
     [self.eventImageView setImageWithURL:url];
     if(self.event.eventUsers){
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"user.objectId==%@",[PFUser currentUser].objectId];
