@@ -15,6 +15,7 @@
 
 @property (retain) PFUser *user;
 
+// 1 = going, 2 = maybe, 3 = not going, 4 = not answered
 @property (retain) NSNumber *status;
 
 + (void)updateEventUser:(EventUser *) eventUser withStatus:(NSNumber *) status completion:(void (^)(EventUser * eventUser, NSError *error))completion;

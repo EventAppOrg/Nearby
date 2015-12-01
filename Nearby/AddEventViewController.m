@@ -8,6 +8,8 @@
 
 #import "AddEventViewController.h"
 #import "Event.h"
+#import "EventDetailViewController.h"
+#import "EventViewController.h"
 #import <Parse/Parse.h>
 
 @interface AddEventViewController ()
@@ -36,14 +38,12 @@ UITextField *activeField;
     [self registerForKeyboardNotifications];
     self.invitees = [NSMutableSet set];
     [self.eventNameTextField becomeFirstResponder];
-    
+    [self.privateSwitch setOn:NO];
     [super viewDidLoad];
 }
 
 - (void)addEvent {
-    // TODO: add relation between self and event as going
     // TODO: add image
-    // TODO: add invitees
     Event *newEvent = [[Event alloc] init];
     if ([self.eventNameTextField.text isEqualToString:@""]) {
         return;
@@ -55,10 +55,28 @@ UITextField *activeField;
     [newEvent setDescription:self.descriptionTextField.text];
     [newEvent setIsPrivate:[NSNumber numberWithBool:self.privateSwitch.isOn]];
     [newEvent setEventDate:[self.datePicker date]];
+    
+    NSMutableArray *invitees = [[NSMutableArray alloc] init];
+    EventUser *eu = [[EventUser alloc] init];
+    eu.user = newEvent.owner;
+    eu.status = [[NSNumber alloc] initWithInt:1];
+    [invitees addObject:eu];
+    for (PFUser *u in self.invitees) {
+        EventUser *invitee = [[EventUser alloc] init];
+        invitee.user = u;
+        invitee.status = [[NSNumber alloc] initWithInt:1];
+        [invitees addObject:invitee];
+    }
+    [newEvent setEventUsers:invitees];
+    
     [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Saved event!");
-            // TODO: show event details
+            EventDetailViewController *edvc = [[EventDetailViewController alloc] init];
+            edvc.event = newEvent;
+            edvc.backToMain = YES;
+            self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+            [self.navigationController pushViewController:edvc animated:YES];
         } else {
             NSLog(@"Failed: %@", error);
         }

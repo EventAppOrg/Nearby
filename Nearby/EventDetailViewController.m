@@ -8,6 +8,7 @@
 
 #import "EventDetailViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "EventViewController.h"
 #import "EventUser.h"
 
 @interface EventDetailViewController ()
@@ -28,6 +29,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateView];
+}
+
+// custom back - we do not want user to back to adding new event
+-(void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if ([self isMovingFromParentViewController]){
+        if (self.backToMain) {
+            NSLog(@"custom back");
+            EventViewController *evc = [[EventViewController alloc] init];
+            evc.user = [PFUser currentUser];
+            [self.navigationController setViewControllers:@[evc] animated:YES];
+        }
+    }
 }
 
 - (void) updateView {

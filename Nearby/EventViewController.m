@@ -52,7 +52,7 @@
 }
 
 - (void) updateView {
-    self.events = [[NSMutableDictionary alloc] init];
+    self.events = [[NSMutableArray alloc] init];
     [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
         self.events = events;
         [self.tableView reloadData];
