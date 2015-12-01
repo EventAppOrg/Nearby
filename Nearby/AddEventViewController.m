@@ -12,7 +12,7 @@
 #import "EventViewController.h"
 #import <Parse/Parse.h>
 
-@interface AddEventViewController ()
+@interface AddEventViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *eventNameTextField;
@@ -24,12 +24,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *inviteUserTextField;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (strong, nonatomic) NSMutableSet *invitees;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation AddEventViewController
 
 UITextField *activeField;
+UILabel *imageLabel;
 
 - (void)viewDidLoad {
     self.title = @"Nearby";
@@ -37,9 +39,21 @@ UITextField *activeField;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Event" style:UIBarButtonItemStyleDone target:self action:@selector(addEvent)];
     [self registerForKeyboardNotifications];
     self.invitees = [NSMutableSet set];
-    [self.eventNameTextField becomeFirstResponder];
     [self.privateSwitch setOn:NO];
     [super viewDidLoad];
+    
+    imageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 20)];
+    [imageLabel setTextColor:[UIColor blackColor]];
+    [imageLabel setBackgroundColor:[UIColor clearColor]];
+    [imageLabel setText:@"Click here to select your image"];
+    imageLabel.frame = CGRectMake(self.imageView.frame.origin.x, self.imageView.frame.origin.y - imageLabel.frame.size.height+50, self.imageView.frame.size.width, imageLabel.frame.size.height);
+    imageLabel.textAlignment = NSTextAlignmentCenter;
+    [imageLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 15.0f]];
+    [self.imageView addSubview:imageLabel];
+}
+
+- (IBAction)onTap:(id)sender {
+    [self showCameraAction:nil];
 }
 
 - (void)addEvent {
@@ -108,14 +122,15 @@ UITextField *activeField;
     NSDictionary* info = [notification userInfo];
     CGRect kbRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.navigationController.navigationBar.frame.size.height + 8, 0.0, kbRect.size.height - 20, 0.0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.navigationController.navigationBar.frame.size.height + 12, 0.0, kbRect.size.height, 0.0);
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbRect.size.height;
     if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
-        [self.scrollView scrollRectToVisible:activeField.frame animated:YES];
+        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y-kbRect.size.height);
+        [self.scrollView setContentOffset:scrollPoint animated:YES];
     }
 }
 
@@ -148,6 +163,21 @@ UITextField *activeField;
             NSLog(@"Invitees: %@", self.invitees);
         }
     }];
+}
+
+-(IBAction)showCameraAction:(id)sender {
+    UIImagePickerController *imagePickController = [[UIImagePickerController alloc]init];
+    imagePickController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;;
+    imagePickController.delegate = self;
+    imagePickController.allowsEditing = TRUE;
+    [self presentViewController:imagePickController animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    self.imageView.image = image;
+    [imageLabel setHidden:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
