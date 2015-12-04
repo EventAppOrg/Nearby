@@ -7,10 +7,10 @@ There are so many interesting events happening around the world but it is not ea
 
 The following **required** functionality will be completed
 
-* [ ] User can view a list of events he's invited to and respond to each event
-* [ ] User can view a list of events nearby and rsvp to each
-* [ ] User can create new events (public or private) and invite people
-* [ ] User can go to the event detail page where one can view list of users, location and other info
+* [x] User can view a list of events he's invited to and respond to each event
+* [x] User can view a list of events nearby and rsvp to each
+* [x] User can create new events (public or private) and invite people
+* [x] User can go to the event detail page where one can view list of users, location and other info
 
 The following **optional** features will be implemented:
 * [ ] Users can send friend requests
