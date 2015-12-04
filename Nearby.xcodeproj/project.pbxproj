@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1E666B5FC70ABC9F5C6BB5BC /* libPods-Nearby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */; };
+		8A57CC021C0D883600D41561 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC001C0D883600D41561 /* ImageTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8A57CC031C0D883600D41561 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC011C0D883600D41561 /* ImageTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8A57CC071C0D8F8600D41561 /* EventBasicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC051C0D8F8600D41561 /* EventBasicTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8A57CC081C0D8F8600D41561 /* EventBasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC061C0D8F8600D41561 /* EventBasicTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8A57CC0E1C11259D00D41561 /* EventStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC0C1C11259D00D41561 /* EventStatsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8A57CC0F1C11259D00D41561 /* EventStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC0D1C11259D00D41561 /* EventStatsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; };
 		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; };
 		8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */; };
@@ -31,6 +37,15 @@
 /* Begin PBXFileReference section */
 		2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nearby.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C56A3D465359FE72328E9DF /* Pods-Nearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearby/Pods-Nearby.release.xcconfig"; sourceTree = "<group>"; };
+		8A57CBFF1C0D883600D41561 /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		8A57CC001C0D883600D41561 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
+		8A57CC011C0D883600D41561 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		8A57CC041C0D8F8600D41561 /* EventBasicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBasicTableViewCell.h; sourceTree = "<group>"; };
+		8A57CC051C0D8F8600D41561 /* EventBasicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventBasicTableViewCell.m; sourceTree = "<group>"; };
+		8A57CC061C0D8F8600D41561 /* EventBasicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventBasicTableViewCell.xib; sourceTree = "<group>"; };
+		8A57CC0B1C11259D00D41561 /* EventStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventStatsTableViewCell.h; sourceTree = "<group>"; };
+		8A57CC0C1C11259D00D41561 /* EventStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventStatsTableViewCell.m; sourceTree = "<group>"; };
+		8A57CC0D1C11259D00D41561 /* EventStatsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventStatsTableViewCell.xib; sourceTree = "<group>"; };
 		8A814A881C062188005ED55E /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
 		8A814A891C062188005ED55E /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
 		8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
@@ -98,6 +113,15 @@
 				8A814A881C062188005ED55E /* EventsTableViewCell.h */,
 				8A814A891C062188005ED55E /* EventsTableViewCell.m */,
 				8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */,
+				8A57CBFF1C0D883600D41561 /* ImageTableViewCell.h */,
+				8A57CC001C0D883600D41561 /* ImageTableViewCell.m */,
+				8A57CC011C0D883600D41561 /* ImageTableViewCell.xib */,
+				8A57CC041C0D8F8600D41561 /* EventBasicTableViewCell.h */,
+				8A57CC051C0D8F8600D41561 /* EventBasicTableViewCell.m */,
+				8A57CC061C0D8F8600D41561 /* EventBasicTableViewCell.xib */,
+				8A57CC0B1C11259D00D41561 /* EventStatsTableViewCell.h */,
+				8A57CC0C1C11259D00D41561 /* EventStatsTableViewCell.m */,
+				8A57CC0D1C11259D00D41561 /* EventStatsTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -237,13 +261,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A57CC031C0D883600D41561 /* ImageTableViewCell.xib in Resources */,
 				B3BB8F241C07C9AB0093BEDD /* SignupViewController.xib in Resources */,
 				8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */,
 				B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */,
 				B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */,
+				8A57CC081C0D8F8600D41561 /* EventBasicTableViewCell.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
 				B3BB8F2E1C07EBAE0093BEDD /* AddEventViewController.xib in Resources */,
 				B32248FD1BFE3E9E005B48BC /* Assets.xcassets in Resources */,
+				8A57CC0F1C11259D00D41561 /* EventStatsTableViewCell.xib in Resources */,
 				8AEC81E11C07E5C7003835DE /* EventDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,13 +330,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A57CC021C0D883600D41561 /* ImageTableViewCell.m in Sources */,
 				B363A8071C0543ED00C81993 /* Event.m in Sources */,
 				B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */,
 				8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */,
 				8AEC81E41C08059D003835DE /* EventUser.m in Sources */,
 				8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */,
 				B363A80B1C054CB200C81993 /* EventViewController.m in Sources */,
+				8A57CC071C0D8F8600D41561 /* EventBasicTableViewCell.m in Sources */,
 				B32248F51BFE3E9E005B48BC /* AppDelegate.m in Sources */,
+				8A57CC0E1C11259D00D41561 /* EventStatsTableViewCell.m in Sources */,
 				B3BB8F231C07C9AB0093BEDD /* SignupViewController.m in Sources */,
 				B32248F21BFE3E9E005B48BC /* main.m in Sources */,
 				B3BB8F2D1C07EBAE0093BEDD /* AddEventViewController.m in Sources */,
