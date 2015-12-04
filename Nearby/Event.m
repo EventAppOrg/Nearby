@@ -19,7 +19,7 @@
 @dynamic distance;
 @dynamic category;
 @dynamic imageUrl;
-@dynamic description;
+@dynamic descriptionContent;
 @dynamic isPrivate;
 @dynamic maybeCount;
 @dynamic eventUsers;

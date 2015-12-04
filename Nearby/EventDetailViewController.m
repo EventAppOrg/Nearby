@@ -13,6 +13,7 @@
 #import "ImageTableViewCell.h"
 #import "EventBasicTableViewCell.h"
 #import "EventStatsTableViewCell.h"
+#import "SimpleTextTableViewCell.h"
 
 @interface EventDetailViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
@@ -35,10 +36,12 @@
     [self.detailTableView registerNib:[UINib nibWithNibName:@"ImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"imageCell"];
     [self.detailTableView registerNib:[UINib nibWithNibName:@"EventBasicTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventBasicCell"];
     [self.detailTableView registerNib:[UINib nibWithNibName:@"EventStatsTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventStatsCell"];
+    [self.detailTableView registerNib:[UINib nibWithNibName:@"SimpleTextTableViewCell" bundle:nil] forCellReuseIdentifier:@"simpleTextCell"];
     self.detailTableView.dataSource = self;
     self.detailTableView.rowHeight = UITableViewAutomaticDimension;
     self.detailTableView.estimatedRowHeight = 120;
     self.detailTableView.separatorColor = [UIColor clearColor];
+    self.detailTableView.allowsSelection = NO;
 //    self.detailTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 //    [self updateView];
 }
@@ -58,7 +61,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,6 +75,10 @@
         return cell;
     } else if(indexPath.row == 1) {
         EventBasicTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"eventBasicCell"];
+        cell.event = _event;
+        return cell;
+    } else if(indexPath.row == 2) {
+        SimpleTextTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"simpleTextCell"];
         cell.event = _event;
         return cell;
     } else {

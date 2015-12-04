@@ -66,7 +66,7 @@ UILabel *imageLabel;
     [newEvent setEventName:self.eventNameTextField.text];
     [newEvent setAddress:self.addressTextField.text];
     [newEvent setCategory:self.categoryTextField.text];
-    [newEvent setDescription:self.descriptionTextField.text];
+    [newEvent setDescriptionContent:self.descriptionTextField.text];
     [newEvent setIsPrivate:[NSNumber numberWithBool:self.privateSwitch.isOn]];
     [newEvent setEventDate:[self.datePicker date]];
     

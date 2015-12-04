@@ -66,10 +66,13 @@
                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5bf-v0-74c">
                         <rect key="frame" x="0.0" y="55" width="366" height="29"/>
                         <segments>
-                            <segment title="First"/>
+                            <segment title="Yes"/>
                             <segment title="Maybe"/>
                             <segment title="No"/>
                         </segments>
+                        <connections>
+                            <action selector="onUserStatusChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="krt-OE-hkS"/>
+                        </connections>
                     </segmentedControl>
                 </subviews>
                 <constraints>
