@@ -10,10 +10,12 @@
 #import "UIImageView+AFNetworking.h"
 #import "EventViewController.h"
 #import "EventUser.h"
+#import "EventChat.h"
 #import "ImageTableViewCell.h"
 #import "EventBasicTableViewCell.h"
 #import "EventStatsTableViewCell.h"
 #import "SimpleTextTableViewCell.h"
+#import "EventChatTableViewCell.h"
 
 @interface EventDetailViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
@@ -37,6 +39,7 @@
     [self.detailTableView registerNib:[UINib nibWithNibName:@"EventBasicTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventBasicCell"];
     [self.detailTableView registerNib:[UINib nibWithNibName:@"EventStatsTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventStatsCell"];
     [self.detailTableView registerNib:[UINib nibWithNibName:@"SimpleTextTableViewCell" bundle:nil] forCellReuseIdentifier:@"simpleTextCell"];
+    [self.detailTableView registerNib:[UINib nibWithNibName:@"EventChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"eventChatCell"];
     self.detailTableView.dataSource = self;
     self.detailTableView.rowHeight = UITableViewAutomaticDimension;
     self.detailTableView.estimatedRowHeight = 120;
@@ -61,7 +64,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,9 +84,17 @@
         SimpleTextTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"simpleTextCell"];
         cell.event = _event;
         return cell;
-    } else {
+    } else if(indexPath.row == 3) {
         EventStatsTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"eventStatsCell"];
         cell.event = _event;
+        return cell;
+    } else {
+        EventChatTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"eventChatCell"];
+        [EventChat getEventChatsForEvent:_event completion:^(NSArray *eventChats, NSError *error) {
+            if(!error) {
+                cell.eventChats = eventChats;
+            }
+        }];
         return cell;
     }
 }

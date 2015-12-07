@@ -16,6 +16,11 @@
 		8A57CC0F1C11259D00D41561 /* EventStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC0D1C11259D00D41561 /* EventStatsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8A57CC131C115CF100D41561 /* SimpleTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC111C115CF100D41561 /* SimpleTextTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		8A57CC141C115CF100D41561 /* SimpleTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC121C115CF100D41561 /* SimpleTextTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8A57CC181C13E2F200D41561 /* EventChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC161C13E2F200D41561 /* EventChatTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8A57CC191C13E2F200D41561 /* EventChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC171C13E2F200D41561 /* EventChatTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8A57CC1D1C154CD000D41561 /* ChatPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC1B1C154CD000D41561 /* ChatPostTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8A57CC1E1C154CD000D41561 /* ChatPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC1C1C154CD000D41561 /* ChatPostTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8A57CC211C1552C000D41561 /* EventChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC201C1552C000D41561 /* EventChat.m */; settings = {ASSET_TAGS = (); }; };
 		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; };
 		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; };
 		8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */; };
@@ -51,6 +56,14 @@
 		8A57CC101C115CF100D41561 /* SimpleTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTextTableViewCell.h; sourceTree = "<group>"; };
 		8A57CC111C115CF100D41561 /* SimpleTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTextTableViewCell.m; sourceTree = "<group>"; };
 		8A57CC121C115CF100D41561 /* SimpleTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTextTableViewCell.xib; sourceTree = "<group>"; };
+		8A57CC151C13E2F200D41561 /* EventChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventChatTableViewCell.h; sourceTree = "<group>"; };
+		8A57CC161C13E2F200D41561 /* EventChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventChatTableViewCell.m; sourceTree = "<group>"; };
+		8A57CC171C13E2F200D41561 /* EventChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventChatTableViewCell.xib; sourceTree = "<group>"; };
+		8A57CC1A1C154CD000D41561 /* ChatPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatPostTableViewCell.h; sourceTree = "<group>"; };
+		8A57CC1B1C154CD000D41561 /* ChatPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatPostTableViewCell.m; sourceTree = "<group>"; };
+		8A57CC1C1C154CD000D41561 /* ChatPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatPostTableViewCell.xib; sourceTree = "<group>"; };
+		8A57CC1F1C1552C000D41561 /* EventChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventChat.h; sourceTree = "<group>"; };
+		8A57CC201C1552C000D41561 /* EventChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventChat.m; sourceTree = "<group>"; };
 		8A814A881C062188005ED55E /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
 		8A814A891C062188005ED55E /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
 		8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
@@ -130,6 +143,12 @@
 				8A57CC101C115CF100D41561 /* SimpleTextTableViewCell.h */,
 				8A57CC111C115CF100D41561 /* SimpleTextTableViewCell.m */,
 				8A57CC121C115CF100D41561 /* SimpleTextTableViewCell.xib */,
+				8A57CC151C13E2F200D41561 /* EventChatTableViewCell.h */,
+				8A57CC161C13E2F200D41561 /* EventChatTableViewCell.m */,
+				8A57CC171C13E2F200D41561 /* EventChatTableViewCell.xib */,
+				8A57CC1A1C154CD000D41561 /* ChatPostTableViewCell.h */,
+				8A57CC1B1C154CD000D41561 /* ChatPostTableViewCell.m */,
+				8A57CC1C1C154CD000D41561 /* ChatPostTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -205,6 +224,8 @@
 				B363A8061C0543ED00C81993 /* Event.m */,
 				8AEC81E21C08059D003835DE /* EventUser.h */,
 				8AEC81E31C08059D003835DE /* EventUser.m */,
+				8A57CC1F1C1552C000D41561 /* EventChat.h */,
+				8A57CC201C1552C000D41561 /* EventChat.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -276,7 +297,9 @@
 				B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */,
 				B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */,
 				8A57CC081C0D8F8600D41561 /* EventBasicTableViewCell.xib in Resources */,
+				8A57CC191C13E2F200D41561 /* EventChatTableViewCell.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
+				8A57CC1E1C154CD000D41561 /* ChatPostTableViewCell.xib in Resources */,
 				B3BB8F2E1C07EBAE0093BEDD /* AddEventViewController.xib in Resources */,
 				B32248FD1BFE3E9E005B48BC /* Assets.xcassets in Resources */,
 				8A57CC0F1C11259D00D41561 /* EventStatsTableViewCell.xib in Resources */,
@@ -340,7 +363,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A57CC021C0D883600D41561 /* ImageTableViewCell.m in Sources */,
+				8A57CC181C13E2F200D41561 /* EventChatTableViewCell.m in Sources */,
 				B363A8071C0543ED00C81993 /* Event.m in Sources */,
+				8A57CC211C1552C000D41561 /* EventChat.m in Sources */,
 				B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */,
 				8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */,
 				8AEC81E41C08059D003835DE /* EventUser.m in Sources */,
@@ -349,6 +374,7 @@
 				B363A80B1C054CB200C81993 /* EventViewController.m in Sources */,
 				8A57CC071C0D8F8600D41561 /* EventBasicTableViewCell.m in Sources */,
 				B32248F51BFE3E9E005B48BC /* AppDelegate.m in Sources */,
+				8A57CC1D1C154CD000D41561 /* ChatPostTableViewCell.m in Sources */,
 				8A57CC0E1C11259D00D41561 /* EventStatsTableViewCell.m in Sources */,
 				B3BB8F231C07C9AB0093BEDD /* SignupViewController.m in Sources */,
 				B32248F21BFE3E9E005B48BC /* main.m in Sources */,
