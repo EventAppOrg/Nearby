@@ -16,6 +16,7 @@
 #import "EventStatsTableViewCell.h"
 #import "SimpleTextTableViewCell.h"
 #import "EventChatTableViewCell.h"
+#import "EventChatsViewController.h"
 
 @interface EventDetailViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
@@ -95,8 +96,19 @@
                 cell.eventChats = eventChats;
             }
         }];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+        [tap addTarget:self action:@selector(onCellTouched)];
+        [cell addGestureRecognizer:tap];
         return cell;
     }
+}
+
+- (void) onCellTouched {
+    NSLog(@"Cell touched");
+    EventChatsViewController *controller = [[EventChatsViewController alloc] init];
+    controller.event = _event;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 

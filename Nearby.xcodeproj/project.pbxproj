@@ -21,6 +21,8 @@
 		8A57CC1D1C154CD000D41561 /* ChatPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC1B1C154CD000D41561 /* ChatPostTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		8A57CC1E1C154CD000D41561 /* ChatPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC1C1C154CD000D41561 /* ChatPostTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8A57CC211C1552C000D41561 /* EventChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC201C1552C000D41561 /* EventChat.m */; settings = {ASSET_TAGS = (); }; };
+		8A57CC251C157C3E00D41561 /* EventChatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC231C157C3E00D41561 /* EventChatsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8A57CC261C157C3E00D41561 /* EventChatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC241C157C3E00D41561 /* EventChatsViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; };
 		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; };
 		8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */; };
@@ -64,6 +66,9 @@
 		8A57CC1C1C154CD000D41561 /* ChatPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatPostTableViewCell.xib; sourceTree = "<group>"; };
 		8A57CC1F1C1552C000D41561 /* EventChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventChat.h; sourceTree = "<group>"; };
 		8A57CC201C1552C000D41561 /* EventChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventChat.m; sourceTree = "<group>"; };
+		8A57CC221C157C3E00D41561 /* EventChatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventChatsViewController.h; sourceTree = "<group>"; };
+		8A57CC231C157C3E00D41561 /* EventChatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventChatsViewController.m; sourceTree = "<group>"; };
+		8A57CC241C157C3E00D41561 /* EventChatsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventChatsViewController.xib; sourceTree = "<group>"; };
 		8A814A881C062188005ED55E /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
 		8A814A891C062188005ED55E /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
 		8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
@@ -171,6 +176,9 @@
 				B3BB8F2A1C07EBAE0093BEDD /* AddEventViewController.h */,
 				B3BB8F2B1C07EBAE0093BEDD /* AddEventViewController.m */,
 				B3BB8F2C1C07EBAE0093BEDD /* AddEventViewController.xib */,
+				8A57CC221C157C3E00D41561 /* EventChatsViewController.h */,
+				8A57CC231C157C3E00D41561 /* EventChatsViewController.m */,
+				8A57CC241C157C3E00D41561 /* EventChatsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -299,6 +307,7 @@
 				8A57CC081C0D8F8600D41561 /* EventBasicTableViewCell.xib in Resources */,
 				8A57CC191C13E2F200D41561 /* EventChatTableViewCell.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
+				8A57CC261C157C3E00D41561 /* EventChatsViewController.xib in Resources */,
 				8A57CC1E1C154CD000D41561 /* ChatPostTableViewCell.xib in Resources */,
 				B3BB8F2E1C07EBAE0093BEDD /* AddEventViewController.xib in Resources */,
 				B32248FD1BFE3E9E005B48BC /* Assets.xcassets in Resources */,
@@ -367,6 +376,7 @@
 				B363A8071C0543ED00C81993 /* Event.m in Sources */,
 				8A57CC211C1552C000D41561 /* EventChat.m in Sources */,
 				B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */,
+				8A57CC251C157C3E00D41561 /* EventChatsViewController.m in Sources */,
 				8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */,
 				8AEC81E41C08059D003835DE /* EventUser.m in Sources */,
 				8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */,
