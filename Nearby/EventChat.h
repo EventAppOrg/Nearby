@@ -18,4 +18,6 @@
 
 + (void)getEventChatsForEvent:(Event *)event completion:(void (^)(NSArray *eventChats, NSError *error))completion;
 
++ (void)createEventChatForEvent:(Event *)event forUser:(PFUser *) user withText:(NSString *) chatContent completion:(void (^)(EventChat *eventChat, NSError *error))completion;
+
 @end

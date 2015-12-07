@@ -33,4 +33,18 @@
     }];
 }
 
++ (void)createEventChatForEvent:(Event *)event forUser:(PFUser *) user withText:(NSString *) chatContent completion:(void (^)(EventChat *eventChat, NSError *error))completion {
+    EventChat *eventChat = [[EventChat alloc] init];
+    eventChat.event = event;
+    eventChat.user = user;
+    eventChat.chatContent = chatContent;
+    [eventChat saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(!error) {
+            completion(eventChat, nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
 @end

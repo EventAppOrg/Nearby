@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventChatsViewController">
             <connections>
+                <outlet property="chatTextField" destination="H1J-KH-pdI" id="rVd-C8-l14"/>
                 <outlet property="chatsTableView" destination="WOw-9a-3TI" id="iy0-aa-DwL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,14 +17,42 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WOw-9a-3TI">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="523"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-iz-pb1">
+                    <rect key="frame" x="0.0" y="523" width="320" height="45"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAo-Ox-sh8">
+                            <rect key="frame" x="11" y="8" width="36.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H1J-KH-pdI">
+                            <rect key="frame" x="52.5" y="4" width="262.5" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="XAo-Ox-sh8" firstAttribute="leading" secondItem="Jo7-iz-pb1" secondAttribute="leading" constant="11" id="Fe5-Jt-RuZ"/>
+                        <constraint firstItem="XAo-Ox-sh8" firstAttribute="top" secondItem="Jo7-iz-pb1" secondAttribute="top" constant="8" id="HaI-IU-rVM"/>
+                        <constraint firstItem="H1J-KH-pdI" firstAttribute="leading" secondItem="XAo-Ox-sh8" secondAttribute="trailing" constant="5" id="Y7z-dV-RxN"/>
+                        <constraint firstItem="H1J-KH-pdI" firstAttribute="top" secondItem="Jo7-iz-pb1" secondAttribute="top" constant="4" id="Z33-IJ-6oB"/>
+                        <constraint firstAttribute="height" constant="45" id="gZo-21-68d"/>
+                        <constraint firstAttribute="trailing" secondItem="H1J-KH-pdI" secondAttribute="trailing" constant="5" id="j5v-XD-EVA"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Jo7-iz-pb1" firstAttribute="top" secondItem="WOw-9a-3TI" secondAttribute="bottom" id="2aJ-vO-bAJ"/>
+                <constraint firstItem="Jo7-iz-pb1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HwS-ha-jiZ"/>
+                <constraint firstAttribute="trailing" secondItem="Jo7-iz-pb1" secondAttribute="trailing" id="LlN-Ui-KB1"/>
+                <constraint firstAttribute="bottom" secondItem="Jo7-iz-pb1" secondAttribute="bottom" id="dnx-fF-FYb"/>
                 <constraint firstItem="WOw-9a-3TI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i8C-1T-TXo"/>
-                <constraint firstAttribute="bottom" secondItem="WOw-9a-3TI" secondAttribute="bottom" id="kXr-mx-aIQ"/>
                 <constraint firstItem="WOw-9a-3TI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nmD-tf-YYs"/>
                 <constraint firstAttribute="trailing" secondItem="WOw-9a-3TI" secondAttribute="trailing" id="zc5-L4-s97"/>
             </constraints>
