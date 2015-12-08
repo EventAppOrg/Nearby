@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1E666B5FC70ABC9F5C6BB5BC /* libPods-Nearby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */; };
+		8A5378981C16BF0F00DFCFC3 /* HamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5378961C16BF0F00DFCFC3 /* HamburgerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8A5378991C16BF0F00DFCFC3 /* HamburgerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5378971C16BF0F00DFCFC3 /* HamburgerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		8A53789D1C16C26800DFCFC3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A53789B1C16C26800DFCFC3 /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8A53789E1C16C26800DFCFC3 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A53789C1C16C26800DFCFC3 /* MenuViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		8A5378A21C16C57C00DFCFC3 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5378A01C16C57C00DFCFC3 /* MenuTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8A5378A31C16C57C00DFCFC3 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5378A11C16C57C00DFCFC3 /* MenuTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8A57CC021C0D883600D41561 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC001C0D883600D41561 /* ImageTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		8A57CC031C0D883600D41561 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC011C0D883600D41561 /* ImageTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8A57CC071C0D8F8600D41561 /* EventBasicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC051C0D8F8600D41561 /* EventBasicTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -46,6 +52,15 @@
 /* Begin PBXFileReference section */
 		2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nearby.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C56A3D465359FE72328E9DF /* Pods-Nearby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nearby.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nearby/Pods-Nearby.release.xcconfig"; sourceTree = "<group>"; };
+		8A5378951C16BF0F00DFCFC3 /* HamburgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamburgerViewController.h; sourceTree = "<group>"; };
+		8A5378961C16BF0F00DFCFC3 /* HamburgerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamburgerViewController.m; sourceTree = "<group>"; };
+		8A5378971C16BF0F00DFCFC3 /* HamburgerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerViewController.xib; sourceTree = "<group>"; };
+		8A53789A1C16C26800DFCFC3 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		8A53789B1C16C26800DFCFC3 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		8A53789C1C16C26800DFCFC3 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8A53789F1C16C57C00DFCFC3 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		8A5378A01C16C57C00DFCFC3 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		8A5378A11C16C57C00DFCFC3 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		8A57CBFF1C0D883600D41561 /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
 		8A57CC001C0D883600D41561 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		8A57CC011C0D883600D41561 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -154,6 +169,9 @@
 				8A57CC1A1C154CD000D41561 /* ChatPostTableViewCell.h */,
 				8A57CC1B1C154CD000D41561 /* ChatPostTableViewCell.m */,
 				8A57CC1C1C154CD000D41561 /* ChatPostTableViewCell.xib */,
+				8A53789F1C16C57C00DFCFC3 /* MenuTableViewCell.h */,
+				8A5378A01C16C57C00DFCFC3 /* MenuTableViewCell.m */,
+				8A5378A11C16C57C00DFCFC3 /* MenuTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -179,6 +197,12 @@
 				8A57CC221C157C3E00D41561 /* EventChatsViewController.h */,
 				8A57CC231C157C3E00D41561 /* EventChatsViewController.m */,
 				8A57CC241C157C3E00D41561 /* EventChatsViewController.xib */,
+				8A5378951C16BF0F00DFCFC3 /* HamburgerViewController.h */,
+				8A5378961C16BF0F00DFCFC3 /* HamburgerViewController.m */,
+				8A5378971C16BF0F00DFCFC3 /* HamburgerViewController.xib */,
+				8A53789A1C16C26800DFCFC3 /* MenuViewController.h */,
+				8A53789B1C16C26800DFCFC3 /* MenuViewController.m */,
+				8A53789C1C16C26800DFCFC3 /* MenuViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -298,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A5378A31C16C57C00DFCFC3 /* MenuTableViewCell.xib in Resources */,
 				8A57CC031C0D883600D41561 /* ImageTableViewCell.xib in Resources */,
 				B3BB8F241C07C9AB0093BEDD /* SignupViewController.xib in Resources */,
 				8A57CC141C115CF100D41561 /* SimpleTextTableViewCell.xib in Resources */,
@@ -306,12 +331,14 @@
 				B363A80C1C054CB200C81993 /* EventViewController.xib in Resources */,
 				8A57CC081C0D8F8600D41561 /* EventBasicTableViewCell.xib in Resources */,
 				8A57CC191C13E2F200D41561 /* EventChatTableViewCell.xib in Resources */,
+				8A5378991C16BF0F00DFCFC3 /* HamburgerViewController.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
 				8A57CC261C157C3E00D41561 /* EventChatsViewController.xib in Resources */,
 				8A57CC1E1C154CD000D41561 /* ChatPostTableViewCell.xib in Resources */,
 				B3BB8F2E1C07EBAE0093BEDD /* AddEventViewController.xib in Resources */,
 				B32248FD1BFE3E9E005B48BC /* Assets.xcassets in Resources */,
 				8A57CC0F1C11259D00D41561 /* EventStatsTableViewCell.xib in Resources */,
+				8A53789E1C16C26800DFCFC3 /* MenuViewController.xib in Resources */,
 				8AEC81E11C07E5C7003835DE /* EventDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,7 +406,9 @@
 				8A57CC251C157C3E00D41561 /* EventChatsViewController.m in Sources */,
 				8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */,
 				8AEC81E41C08059D003835DE /* EventUser.m in Sources */,
+				8A5378981C16BF0F00DFCFC3 /* HamburgerViewController.m in Sources */,
 				8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */,
+				8A5378A21C16C57C00DFCFC3 /* MenuTableViewCell.m in Sources */,
 				8A57CC131C115CF100D41561 /* SimpleTextTableViewCell.m in Sources */,
 				B363A80B1C054CB200C81993 /* EventViewController.m in Sources */,
 				8A57CC071C0D8F8600D41561 /* EventBasicTableViewCell.m in Sources */,
@@ -389,6 +418,7 @@
 				B3BB8F231C07C9AB0093BEDD /* SignupViewController.m in Sources */,
 				B32248F21BFE3E9E005B48BC /* main.m in Sources */,
 				B3BB8F2D1C07EBAE0093BEDD /* AddEventViewController.m in Sources */,
+				8A53789D1C16C26800DFCFC3 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

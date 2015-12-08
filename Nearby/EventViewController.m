@@ -14,6 +14,7 @@
 #import "EventUser.h"
 #import "EventDetailViewController.h"
 
+
 @interface EventViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSArray *events;
@@ -67,9 +68,7 @@
 
 - (void)logOut {
     [PFUser logOut];
-    LoginViewController *lvc = [[LoginViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:lvc];
-    [self presentViewController:navController animated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UserDidLogoutNotification" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
