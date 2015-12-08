@@ -52,7 +52,8 @@
     [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
         if (user != nil) {
             NSLog(@"Logged in!");
-            [self showEventViewController:user];
+//            [self showEventViewController:user];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UserDidLoginNotification" object:nil];
         } else {
             NSLog(@"Failed to log in: %@", error);
             self.errorMessageLabel.text = @"Incorrect email or password";

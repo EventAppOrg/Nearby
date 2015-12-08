@@ -4,9 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
-                <outlet property="tableView" destination="XvC-Uy-hWF" id="RXQ-7p-ZcS"/>
+                <outlet property="menuTableView" destination="fnf-T1-aEB" id="pUR-bx-l8h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,19 +15,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XvC-Uy-hWF">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-T1-aEB">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="XvC-Uy-hWF" secondAttribute="trailing" id="0sA-rV-fnL"/>
-                <constraint firstItem="XvC-Uy-hWF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6I5-eA-mgg"/>
-                <constraint firstAttribute="bottom" secondItem="XvC-Uy-hWF" secondAttribute="bottom" id="Io2-gS-gu8"/>
-                <constraint firstItem="XvC-Uy-hWF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tg3-ap-ZE0"/>
+                <constraint firstAttribute="trailing" secondItem="fnf-T1-aEB" secondAttribute="trailing" id="9Va-qW-d9g"/>
+                <constraint firstItem="fnf-T1-aEB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dCm-Z8-tkr"/>
+                <constraint firstItem="fnf-T1-aEB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y79-Wo-rkf"/>
+                <constraint firstAttribute="bottom" secondItem="fnf-T1-aEB" secondAttribute="bottom" id="yZM-Bt-wf8"/>
             </constraints>
-            <point key="canvasLocation" x="118" y="407"/>
+            <point key="canvasLocation" x="303" y="295"/>
         </view>
     </objects>
 </document>

@@ -12,7 +12,13 @@
 #import "EventUser.h"
 #import "EventChat.h"
 #import "EventViewController.h"
+#import "MenuViewController.h"
+#import "HamburgerViewController.h"
 #import <Parse/Parse.h>
+
+NSString * const UserDidLoginNotification = @"UserDidLoginNotification";
+NSString * const UserDidLogoutNotification = @"UserDidLogoutNotification";
+
 
 @interface AppDelegate ()
 
@@ -55,11 +61,50 @@
         }
     }];*/
 
-    LoginViewController *lvc = [[LoginViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:lvc];
-    self.window.rootViewController = navController;
+//    LoginViewController *lvc = [[LoginViewController alloc] init];
+//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:lvc];
+//    self.window.rootViewController = navController;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogOut) name:UserDidLogoutNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogIn) name:UserDidLoginNotification object:nil];
+
+    
+    PFUser *user = [PFUser currentUser];
+    if(user == nil) {
+        NSLog(@"Not Logged in");
+        self.window.rootViewController = [[LoginViewController alloc] init];
+    } else {
+        MenuViewController *menuViewController = [[MenuViewController alloc] init];
+        UINavigationController *menuNav = [[UINavigationController alloc] initWithRootViewController:menuViewController];
+        HamburgerViewController *hamburgerViewController = [[HamburgerViewController alloc] init];
+        EventViewController *eventViewController = [[EventViewController alloc] init];
+        eventViewController.user = [PFUser currentUser];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:eventViewController];
+        hamburgerViewController.menuViewController = menuNav;
+        hamburgerViewController.contentViewController = navController;
+        menuViewController.hamburgerViewController = hamburgerViewController;
+        self.window.rootViewController = hamburgerViewController;
+    }
+
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void) userDidLogIn {
+    MenuViewController *menuViewController = [[MenuViewController alloc] init];
+    UINavigationController *menuNav = [[UINavigationController alloc] initWithRootViewController:menuViewController];
+    HamburgerViewController *hamburgerViewController = [[HamburgerViewController alloc] init];
+    EventViewController *eventViewController = [[EventViewController alloc] init];
+    eventViewController.user = [PFUser currentUser];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:eventViewController];
+    hamburgerViewController.menuViewController = menuNav;
+    hamburgerViewController.contentViewController = navController;
+    menuViewController.hamburgerViewController = hamburgerViewController;
+    self.window.rootViewController = hamburgerViewController;
+}
+
+
+- (void) userDidLogOut {
+    self.window.rootViewController = [[LoginViewController alloc] init];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
