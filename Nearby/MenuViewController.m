@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "EventViewController.h"
 #import "MenuTableViewCell.h"
+#import "AddEventViewController.h"
 
 @interface MenuViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
@@ -23,15 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [super viewDidLoad];
-    self.menuItems = @[@"Home"];
-    UIViewController *viewController1 = [[EventViewController alloc] init];
-    self.viewControllers = @[viewController1];
+    self.menuItems = @[@"All Events", @"Add Event", @"Log Out"];
+    EventViewController *viewController1 = [[EventViewController alloc] init];
+    viewController1.user = [PFUser currentUser];
+    UIViewController *viewController2 = [[AddEventViewController alloc] init];
+    self.viewControllers = @[viewController1, viewController2];
     [self.menuTableView registerNib:[UINib nibWithNibName:@"MenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"menuCell"];
     self.menuTableView.rowHeight = UITableViewAutomaticDimension;
     self.menuTableView.estimatedRowHeight = 60;
     UIImage *image1 = [UIImage imageNamed:@"ic_home"];
-    self.iconImages = @[image1];
+    UIImage *image2 = [UIImage imageNamed:@"ic_home"];
+    UIImage *image3 = [UIImage imageNamed:@"ic_exit_to_app"];
+    self.iconImages = @[image1, image2, image3];
     self.menuTableView.dataSource = self;
+    self.menuTableView.delegate = self;
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -47,6 +53,14 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(indexPath.row != self.menuItems.count - 1) {
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.viewControllers[indexPath.row]];
+        self.hamburgerViewController.contentViewController = navController;
+    } else {
+        [PFUser logOut];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserDidLogoutNotification" object:nil];
+    }
+
 }
 
 
