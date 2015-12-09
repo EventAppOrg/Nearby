@@ -25,6 +25,7 @@
     self.chatTableView.rowHeight = UITableViewAutomaticDimension;
     self.chatTableView.separatorColor = [UIColor clearColor];
     self.chatTableView.allowsSelection = NO;
+    self.chatTableView.scrollEnabled = NO;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
