@@ -31,9 +31,9 @@
 + (void)getEventsForUser:(PFUser *)user completion:(void (^)(NSArray *events, NSError *error))completion {
     NSPredicate *predicatePub = [NSPredicate predicateWithFormat:@"isPrivate = nil OR isPrivate = false"];
     NSPredicate *predicateOwner = [NSPredicate predicateWithFormat:@"owner = %@", [PFUser currentUser]];
+    //NSPredicate *predicateInvitee = [NSPredicate predicateWithFormat:@"%@ IN eventUsers", [PFUser currentUser]];
     
-    NSPredicate *predicateInvitee = [NSPredicate predicateWithFormat:@"%@ IN eventUsers", [PFUser currentUser]];
-    NSPredicate *predicate = [NSCompoundPredicate orPredicateWithSubpredicates:[NSArray arrayWithObjects:predicatePub,predicateOwner, predicateInvitee, nil]];
+    NSPredicate *predicate = [NSCompoundPredicate orPredicateWithSubpredicates:[NSArray arrayWithObjects:predicatePub,predicateOwner, nil]];
     
     PFQuery *query = [Event queryWithPredicate:predicate];
     [query includeKey:@"eventUsers"];

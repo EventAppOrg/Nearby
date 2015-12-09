@@ -29,10 +29,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    PFUser *u = [PFUser currentUser];
-    if ([u isAuthenticated]) {
-        [self showEventViewController:u];
-    }
     [self.usernameTextField becomeFirstResponder];
 }
 

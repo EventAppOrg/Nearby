@@ -71,7 +71,9 @@ NSString * const UserDidLogoutNotification = @"UserDidLogoutNotification";
     PFUser *user = [PFUser currentUser];
     if(user == nil) {
         NSLog(@"Not Logged in");
-        self.window.rootViewController = [[LoginViewController alloc] init];
+        LoginViewController *lvc = [[LoginViewController alloc] init];
+        UINavigationController *menuNav = [[UINavigationController alloc] initWithRootViewController:lvc];
+        self.window.rootViewController = menuNav;
     } else {
         MenuViewController *menuViewController = [[MenuViewController alloc] init];
         UINavigationController *menuNav = [[UINavigationController alloc] initWithRootViewController:menuViewController];
@@ -104,7 +106,9 @@ NSString * const UserDidLogoutNotification = @"UserDidLogoutNotification";
 
 
 - (void) userDidLogOut {
-    self.window.rootViewController = [[LoginViewController alloc] init];
+    LoginViewController *lvc = [[LoginViewController alloc] init];
+    UINavigationController *menuNav = [[UINavigationController alloc] initWithRootViewController:lvc];
+    self.window.rootViewController = menuNav;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
