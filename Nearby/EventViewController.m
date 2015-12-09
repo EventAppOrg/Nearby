@@ -25,6 +25,7 @@
 @implementation EventViewController
 
 - (void)viewDidLoad {
+    self.events = [[NSMutableArray alloc] init];
     self.title = @"Nearby";
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -50,7 +51,6 @@
 }
 
 - (void) updateView {
-    self.events = [[NSMutableArray alloc] init];
     [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
         self.events = events;
         [self.tableView reloadData];
