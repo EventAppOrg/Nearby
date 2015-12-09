@@ -29,10 +29,15 @@
 }
 
 + (void)getEventsForUser:(PFUser *)user completion:(void (^)(NSArray *events, NSError *error))completion {
-    // get public events
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isPrivate = nil OR isPrivate = false"];
+    NSPredicate *predicatePub = [NSPredicate predicateWithFormat:@"isPrivate = nil OR isPrivate = false"];
+    NSPredicate *predicateOwner = [NSPredicate predicateWithFormat:@"owner = %@", [PFUser currentUser]];
+    //NSPredicate *predicateInvitee = [NSPredicate predicateWithFormat:@"%@ in eventUsers.user", [PFUser currentUser]];
+    
+    NSPredicate *predicate = [NSCompoundPredicate orPredicateWithSubpredicates:[NSArray arrayWithObjects:predicatePub,predicateOwner,nil]];
+    
     PFQuery *query = [Event queryWithPredicate:predicate];
     [query includeKey:@"eventUsers"];
+    [query includeKey:@"owner"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
             NSLog(@"Objects %@", objects);
@@ -42,25 +47,6 @@
             completion(nil, error);
         }
     }];
-    
-    
-    // TODO:
-    // get events where user is owner
-    // get events where user is invited...
-    
-    /*PFQuery *ownerQuery = [Event query];
-    [ownerQuery includeKey:@"owner"];
-    [ownerQuery includeKey:@"eventUsers"];
-    [ownerQuery whereKey:@"owner" equalTo:[PFUser currentUser]];
-    [ownerQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (!error) {
-            NSLog(@"Objects %@", objects);
-            completion(objects, nil);
-        } else {
-            NSLog(@"Error: %@", error);
-            completion(nil, error);
-        }
-    }];*/
 }
 
 

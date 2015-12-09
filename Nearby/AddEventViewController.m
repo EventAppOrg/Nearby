@@ -102,7 +102,6 @@ UILabel *imageLabel;
 }
 
 - (void)addEvent {
-    // TODO: add image
     Event *newEvent = [[Event alloc] init];
     if ([self.eventNameTextField.text isEqualToString:@""]) {
         return;
@@ -126,7 +125,7 @@ UILabel *imageLabel;
     for (PFUser *u in self.invitees) {
         EventUser *invitee = [[EventUser alloc] init];
         invitee.user = u;
-        invitee.status = [[NSNumber alloc] initWithInt:1];
+        invitee.status = [[NSNumber alloc] initWithInt:4];
         [invitees addObject:invitee];
     }
     [newEvent setEventUsers:invitees];
