@@ -16,6 +16,7 @@
                 <outlet property="inviteUserTextField" destination="YQQ-hF-wBo" id="gxC-CY-twd"/>
                 <outlet property="privateSwitch" destination="bcB-0B-bsP" id="3v9-Gu-Vac"/>
                 <outlet property="scrollView" destination="a83-2U-HIb" id="Dtm-Xw-ypT"/>
+                <outlet property="tableView" destination="27A-7d-iO1" id="bHn-MU-DVW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -194,11 +195,20 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="27A-7d-iO1">
+                                    <rect key="frame" x="0.0" y="968" width="312" height="350"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="312" id="bJ1-9N-k3X"/>
+                                        <constraint firstAttribute="height" constant="350" id="yPP-9Z-2oA"/>
+                                    </constraints>
+                                </tableView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="wW7-TX-Gey" firstAttribute="leading" secondItem="DtR-da-SDF" secondAttribute="leading" constant="8" id="6XH-RR-Lof"/>
                                 <constraint firstItem="8qW-c0-pqd" firstAttribute="leading" secondItem="DtR-da-SDF" secondAttribute="leading" constant="8" id="7cL-ha-etF"/>
+                                <constraint firstItem="27A-7d-iO1" firstAttribute="leading" secondItem="DtR-da-SDF" secondAttribute="leading" id="8EW-D1-OY6"/>
                                 <constraint firstItem="jL1-hW-xjW" firstAttribute="top" secondItem="M0w-op-gF0" secondAttribute="bottom" constant="8" id="AQy-zu-Orm"/>
                                 <constraint firstItem="5Ry-5a-9M5" firstAttribute="top" secondItem="iaG-TN-MOk" secondAttribute="bottom" constant="8" id="AXZ-5R-DF4"/>
                                 <constraint firstItem="YQQ-hF-wBo" firstAttribute="leading" secondItem="DtR-da-SDF" secondAttribute="leading" constant="8" id="B5K-MW-Zz6"/>
@@ -233,6 +243,7 @@
                                 <constraint firstAttribute="trailing" secondItem="wwX-bS-5ol" secondAttribute="trailing" constant="8" id="wG8-wM-cH2"/>
                                 <constraint firstItem="BHM-6q-Yuy" firstAttribute="leading" secondItem="DtR-da-SDF" secondAttribute="leading" constant="8" id="xOH-VA-m6I"/>
                                 <constraint firstItem="wwX-bS-5ol" firstAttribute="leading" secondItem="8qW-c0-pqd" secondAttribute="trailing" constant="8" id="xc9-OO-EyQ"/>
+                                <constraint firstItem="27A-7d-iO1" firstAttribute="top" secondItem="8qW-c0-pqd" secondAttribute="bottom" constant="12" id="xtK-E9-Z97"/>
                                 <constraint firstItem="bcB-0B-bsP" firstAttribute="top" secondItem="YcT-aV-l8R" secondAttribute="bottom" constant="8" id="yCO-QD-luH"/>
                                 <constraint firstItem="dT7-cm-hrw" firstAttribute="leading" secondItem="DtR-da-SDF" secondAttribute="leading" constant="8" id="yZf-cq-PCh"/>
                             </constraints>

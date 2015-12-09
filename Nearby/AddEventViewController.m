@@ -10,9 +10,10 @@
 #import "Event.h"
 #import "EventDetailViewController.h"
 #import "EventViewController.h"
+#import "InviteeTableViewCell.h"
 #import <Parse/Parse.h>
 
-@interface AddEventViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface AddEventViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDataSource,InviteeTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *eventNameTextField;
@@ -24,7 +25,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *inviteUserTextField;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (strong, nonatomic) NSMutableSet *invitees;
+@property (strong, nonatomic) NSMutableSet *inviteesEmails;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -39,6 +42,7 @@ UILabel *imageLabel;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Event" style:UIBarButtonItemStyleDone target:self action:@selector(addEvent)];
     [self registerForKeyboardNotifications];
     self.invitees = [NSMutableSet set];
+    self.inviteesEmails = [NSMutableSet set];
     [self.privateSwitch setOn:NO];
     [super viewDidLoad];
     
@@ -51,10 +55,50 @@ UILabel *imageLabel;
     imageLabel.textAlignment = NSTextAlignmentCenter;
     [imageLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 15.0f]];
     [self.imageView addSubview:imageLabel];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"InviteeTableViewCell" bundle:nil] forCellReuseIdentifier:@"inviteeCell"];
+    self.tableView.dataSource = self;
+    [self.tableView reloadData];
+}
+
+- (void)InviteeTableViewCell:(InviteeTableViewCell *)cell {
+    //NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSString *username = cell.userLabel.text;
+    [self.inviteesEmails removeObject:username];
+    
+    PFUser *toRemove;
+    for (PFUser *u in self.invitees) {
+        if ([[u username] isEqualToString:username]) {
+            toRemove = u;
+        }
+    }
+    [self.invitees removeObject:toRemove];
+    
+    NSLog(@"Invitees: %@", self.invitees);
+    NSLog(@"Mails: %@", self.inviteesEmails);
+    
+    [self.tableView reloadData];
 }
 
 - (IBAction)onTap:(id)sender {
     [self showCameraAction:nil];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.inviteesEmails.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    InviteeTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"inviteeCell"];
+    
+    if (!cell) {
+        cell = [[InviteeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"inviteeCell"];
+    }
+    
+    cell.delegate = self;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    cell.userLabel.text = [[self.inviteesEmails allObjects] objectAtIndex:indexPath.row];
+    return cell;
 }
 
 - (void)addEvent {
@@ -162,9 +206,18 @@ UILabel *imageLabel;
     
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (object != nil) {
-            NSLog(@"User exist: %@", object);
-            [self.invitees addObject:object];
-            NSLog(@"Invitees: %@", self.invitees);
+            PFUser *user = (PFUser *)object;
+            NSString *email = [user username];
+            NSLog(@"Email: %@", email);
+            if (![self.inviteesEmails containsObject:email]) {
+                [self.inviteesEmails addObject:email];
+                [self.invitees addObject:object];
+                NSLog(@"Invitees: %@", self.invitees);
+                NSLog(@"Mails: %@", self.inviteesEmails);
+                [self.tableView reloadData];
+                self.inviteUserTextField.text = @"";
+            }
+            self.inviteUserTextField.text = @"";
         } else {
             NSLog(@"User does not exist");
             self.errorLabel.text = @"User does not exist";

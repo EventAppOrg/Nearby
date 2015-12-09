@@ -8,32 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		1E666B5FC70ABC9F5C6BB5BC /* libPods-Nearby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD0C24E5FB109D76E847354 /* libPods-Nearby.a */; };
-		8A5378981C16BF0F00DFCFC3 /* HamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5378961C16BF0F00DFCFC3 /* HamburgerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		8A5378991C16BF0F00DFCFC3 /* HamburgerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5378971C16BF0F00DFCFC3 /* HamburgerViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		8A53789D1C16C26800DFCFC3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A53789B1C16C26800DFCFC3 /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
-		8A53789E1C16C26800DFCFC3 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A53789C1C16C26800DFCFC3 /* MenuViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		8A5378A21C16C57C00DFCFC3 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5378A01C16C57C00DFCFC3 /* MenuTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		8A5378A31C16C57C00DFCFC3 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5378A11C16C57C00DFCFC3 /* MenuTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8A57CC021C0D883600D41561 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC001C0D883600D41561 /* ImageTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		8A57CC031C0D883600D41561 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC011C0D883600D41561 /* ImageTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8A57CC071C0D8F8600D41561 /* EventBasicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC051C0D8F8600D41561 /* EventBasicTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		8A57CC081C0D8F8600D41561 /* EventBasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC061C0D8F8600D41561 /* EventBasicTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8A57CC0E1C11259D00D41561 /* EventStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC0C1C11259D00D41561 /* EventStatsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		8A57CC0F1C11259D00D41561 /* EventStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC0D1C11259D00D41561 /* EventStatsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8A57CC131C115CF100D41561 /* SimpleTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC111C115CF100D41561 /* SimpleTextTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		8A57CC141C115CF100D41561 /* SimpleTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC121C115CF100D41561 /* SimpleTextTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8A57CC181C13E2F200D41561 /* EventChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC161C13E2F200D41561 /* EventChatTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		8A57CC191C13E2F200D41561 /* EventChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC171C13E2F200D41561 /* EventChatTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8A57CC1D1C154CD000D41561 /* ChatPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC1B1C154CD000D41561 /* ChatPostTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		8A57CC1E1C154CD000D41561 /* ChatPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC1C1C154CD000D41561 /* ChatPostTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8A57CC211C1552C000D41561 /* EventChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC201C1552C000D41561 /* EventChat.m */; settings = {ASSET_TAGS = (); }; };
-		8A57CC251C157C3E00D41561 /* EventChatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC231C157C3E00D41561 /* EventChatsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		8A57CC261C157C3E00D41561 /* EventChatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC241C157C3E00D41561 /* EventChatsViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		8A5378981C16BF0F00DFCFC3 /* HamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5378961C16BF0F00DFCFC3 /* HamburgerViewController.m */; };
+		8A5378991C16BF0F00DFCFC3 /* HamburgerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5378971C16BF0F00DFCFC3 /* HamburgerViewController.xib */; };
+		8A53789D1C16C26800DFCFC3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A53789B1C16C26800DFCFC3 /* MenuViewController.m */; };
+		8A53789E1C16C26800DFCFC3 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A53789C1C16C26800DFCFC3 /* MenuViewController.xib */; };
+		8A5378A21C16C57C00DFCFC3 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5378A01C16C57C00DFCFC3 /* MenuTableViewCell.m */; };
+		8A5378A31C16C57C00DFCFC3 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A5378A11C16C57C00DFCFC3 /* MenuTableViewCell.xib */; };
+		8A57CC021C0D883600D41561 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC001C0D883600D41561 /* ImageTableViewCell.m */; };
+		8A57CC031C0D883600D41561 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC011C0D883600D41561 /* ImageTableViewCell.xib */; };
+		8A57CC071C0D8F8600D41561 /* EventBasicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC051C0D8F8600D41561 /* EventBasicTableViewCell.m */; };
+		8A57CC081C0D8F8600D41561 /* EventBasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC061C0D8F8600D41561 /* EventBasicTableViewCell.xib */; };
+		8A57CC0E1C11259D00D41561 /* EventStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC0C1C11259D00D41561 /* EventStatsTableViewCell.m */; };
+		8A57CC0F1C11259D00D41561 /* EventStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC0D1C11259D00D41561 /* EventStatsTableViewCell.xib */; };
+		8A57CC131C115CF100D41561 /* SimpleTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC111C115CF100D41561 /* SimpleTextTableViewCell.m */; };
+		8A57CC141C115CF100D41561 /* SimpleTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC121C115CF100D41561 /* SimpleTextTableViewCell.xib */; };
+		8A57CC181C13E2F200D41561 /* EventChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC161C13E2F200D41561 /* EventChatTableViewCell.m */; };
+		8A57CC191C13E2F200D41561 /* EventChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC171C13E2F200D41561 /* EventChatTableViewCell.xib */; };
+		8A57CC1D1C154CD000D41561 /* ChatPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC1B1C154CD000D41561 /* ChatPostTableViewCell.m */; };
+		8A57CC1E1C154CD000D41561 /* ChatPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC1C1C154CD000D41561 /* ChatPostTableViewCell.xib */; };
+		8A57CC211C1552C000D41561 /* EventChat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC201C1552C000D41561 /* EventChat.m */; };
+		8A57CC251C157C3E00D41561 /* EventChatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57CC231C157C3E00D41561 /* EventChatsViewController.m */; };
+		8A57CC261C157C3E00D41561 /* EventChatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A57CC241C157C3E00D41561 /* EventChatsViewController.xib */; };
 		8A814A8B1C062188005ED55E /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A814A891C062188005ED55E /* EventsTableViewCell.m */; };
 		8A814A8C1C062188005ED55E /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A814A8A1C062188005ED55E /* EventsTableViewCell.xib */; };
 		8AEC81E01C07E5C7003835DE /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81DE1C07E5C7003835DE /* EventDetailViewController.m */; };
 		8AEC81E11C07E5C7003835DE /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEC81DF1C07E5C7003835DE /* EventDetailViewController.xib */; };
-		8AEC81E41C08059D003835DE /* EventUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81E31C08059D003835DE /* EventUser.m */; settings = {ASSET_TAGS = (); }; };
+		8AEC81E41C08059D003835DE /* EventUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC81E31C08059D003835DE /* EventUser.m */; };
+		B31B22291C17AF2D0034D7B9 /* InviteeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B31B22271C17AF2D0034D7B9 /* InviteeTableViewCell.m */; };
+		B31B222A1C17AF2D0034D7B9 /* InviteeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31B22281C17AF2D0034D7B9 /* InviteeTableViewCell.xib */; };
 		B31E18BA1C053B5700977D55 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B31E18B81C053B5700977D55 /* LoginViewController.m */; };
 		B31E18BB1C053B5700977D55 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B31E18B91C053B5700977D55 /* LoginViewController.xib */; };
 		B32248F21BFE3E9E005B48BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B32248F11BFE3E9E005B48BC /* main.m */; };
@@ -92,6 +94,9 @@
 		8AEC81DF1C07E5C7003835DE /* EventDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		8AEC81E21C08059D003835DE /* EventUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventUser.h; sourceTree = "<group>"; };
 		8AEC81E31C08059D003835DE /* EventUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventUser.m; sourceTree = "<group>"; };
+		B31B22261C17AF2D0034D7B9 /* InviteeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteeTableViewCell.h; sourceTree = "<group>"; };
+		B31B22271C17AF2D0034D7B9 /* InviteeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteeTableViewCell.m; sourceTree = "<group>"; };
+		B31B22281C17AF2D0034D7B9 /* InviteeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteeTableViewCell.xib; sourceTree = "<group>"; };
 		B31E18B71C053B5700977D55 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B31E18B81C053B5700977D55 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B31E18B91C053B5700977D55 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -172,6 +177,9 @@
 				8A53789F1C16C57C00DFCFC3 /* MenuTableViewCell.h */,
 				8A5378A01C16C57C00DFCFC3 /* MenuTableViewCell.m */,
 				8A5378A11C16C57C00DFCFC3 /* MenuTableViewCell.xib */,
+				B31B22261C17AF2D0034D7B9 /* InviteeTableViewCell.h */,
+				B31B22271C17AF2D0034D7B9 /* InviteeTableViewCell.m */,
+				B31B22281C17AF2D0034D7B9 /* InviteeTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 				8A57CC081C0D8F8600D41561 /* EventBasicTableViewCell.xib in Resources */,
 				8A57CC191C13E2F200D41561 /* EventChatTableViewCell.xib in Resources */,
 				8A5378991C16BF0F00DFCFC3 /* HamburgerViewController.xib in Resources */,
+				B31B222A1C17AF2D0034D7B9 /* InviteeTableViewCell.xib in Resources */,
 				B32249001BFE3E9E005B48BC /* LaunchScreen.storyboard in Resources */,
 				8A57CC261C157C3E00D41561 /* EventChatsViewController.xib in Resources */,
 				8A57CC1E1C154CD000D41561 /* ChatPostTableViewCell.xib in Resources */,
@@ -418,6 +427,7 @@
 				B3BB8F231C07C9AB0093BEDD /* SignupViewController.m in Sources */,
 				B32248F21BFE3E9E005B48BC /* main.m in Sources */,
 				B3BB8F2D1C07EBAE0093BEDD /* AddEventViewController.m in Sources */,
+				B31B22291C17AF2D0034D7B9 /* InviteeTableViewCell.m in Sources */,
 				8A53789D1C16C26800DFCFC3 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
