@@ -43,8 +43,12 @@
         }
     }];
     
+    
+    // TODO:
     // get events where user is owner
-    PFQuery *ownerQuery = [Event query];
+    // get events where user is invited...
+    
+    /*PFQuery *ownerQuery = [Event query];
     [ownerQuery includeKey:@"owner"];
     [ownerQuery includeKey:@"eventUsers"];
     [ownerQuery whereKey:@"owner" equalTo:[PFUser currentUser]];
@@ -56,9 +60,7 @@
             NSLog(@"Error: %@", error);
             completion(nil, error);
         }
-    }];
-    
-    // get events where user is invited...
+    }];*/
 }
 
 

@@ -42,6 +42,7 @@ UILabel *imageLabel;
     [self.privateSwitch setOn:NO];
     [super viewDidLoad];
     
+    self.imageView.backgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1];
     imageLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 20)];
     [imageLabel setTextColor:[UIColor blackColor]];
     [imageLabel setBackgroundColor:[UIColor clearColor]];
@@ -70,6 +71,9 @@ UILabel *imageLabel;
     [newEvent setIsPrivate:[NSNumber numberWithBool:self.privateSwitch.isOn]];
     [newEvent setEventDate:[self.datePicker date]];
     
+    NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
+    PFFile *imageFile = [PFFile fileWithName:self.eventNameTextField.text data:imageData];
+    
     NSMutableArray *invitees = [[NSMutableArray alloc] init];
     EventUser *eu = [[EventUser alloc] init];
     eu.user = newEvent.owner;
@@ -83,17 +87,22 @@ UILabel *imageLabel;
     }
     [newEvent setEventUsers:invitees];
     
-    [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded) {
-            NSLog(@"Saved event!");
-            EventDetailViewController *edvc = [[EventDetailViewController alloc] init];
-            edvc.event = newEvent;
-            edvc.backToMain = YES;
-            self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-            [self.navigationController pushViewController:edvc animated:YES];
-        } else {
-            NSLog(@"Failed: %@", error);
-        }
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [newEvent setImageUrl:[imageFile url]];
+        [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Saved event!");
+                EventDetailViewController *edvc = [[EventDetailViewController alloc] init];
+                edvc.event = newEvent;
+                edvc.backToMain = YES;
+                self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+                [self.navigationController pushViewController:edvc animated:YES];
+            } else {
+                NSLog(@"Failed: %@", error);
+            }
+        }];
+    } progressBlock:^(int percentDone) {
+        NSLog(@"Uploading: %d", percentDone);
     }];
 }
 

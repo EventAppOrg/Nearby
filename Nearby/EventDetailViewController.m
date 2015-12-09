@@ -59,7 +59,7 @@
             NSLog(@"custom back");
             EventViewController *evc = [[EventViewController alloc] init];
             evc.user = [PFUser currentUser];
-            [self.navigationController setViewControllers:@[evc] animated:YES];
+            [self.navigationController setViewControllers:@[evc] animated:NO];
         }
     }
 }
