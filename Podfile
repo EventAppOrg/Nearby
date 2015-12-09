@@ -6,5 +6,6 @@
 target 'Nearby' do
 pod 'AFNetworking'
 pod 'Parse'
+pod 'MBProgressHUD'
 end
 

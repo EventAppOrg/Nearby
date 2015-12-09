@@ -11,6 +11,7 @@
 #import "EventDetailViewController.h"
 #import "EventViewController.h"
 #import "InviteeTableViewCell.h"
+#import "MBProgressHUD.h"
 #import <Parse/Parse.h>
 
 @interface AddEventViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDataSource,InviteeTableViewCellDelegate>
@@ -62,7 +63,6 @@ UILabel *imageLabel;
 }
 
 - (void)InviteeTableViewCell:(InviteeTableViewCell *)cell {
-    //NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     NSString *username = cell.userLabel.text;
     [self.inviteesEmails removeObject:username];
     
@@ -131,10 +131,14 @@ UILabel *imageLabel;
     }
     [newEvent setEventUsers:invitees];
     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Adding Event";
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [newEvent setImageUrl:[imageFile url]];
         [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             if (succeeded) {
+                [hud hide:YES];
                 NSLog(@"Saved event!");
                 EventDetailViewController *edvc = [[EventDetailViewController alloc] init];
                 edvc.event = newEvent;
@@ -143,10 +147,12 @@ UILabel *imageLabel;
                 [self.navigationController pushViewController:edvc animated:YES];
             } else {
                 NSLog(@"Failed: %@", error);
+                [hud hide:YES];
             }
         }];
     } progressBlock:^(int percentDone) {
         NSLog(@"Uploading: %d", percentDone);
+        hud.progress = percentDone;
     }];
 }
 
@@ -239,6 +245,7 @@ UILabel *imageLabel;
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     self.imageView.image = image;
     [imageLabel setHidden:YES];
+    self.imageView.backgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:0];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
