@@ -33,7 +33,7 @@
     self.menuTableView.rowHeight = UITableViewAutomaticDimension;
     self.menuTableView.estimatedRowHeight = 60;
     UIImage *image1 = [UIImage imageNamed:@"ic_home"];
-    UIImage *image2 = [UIImage imageNamed:@"ic_home"];
+    UIImage *image2 = [UIImage imageNamed:@"ic_plus_one"];
     UIImage *image3 = [UIImage imageNamed:@"ic_exit_to_app"];
     self.iconImages = @[image1, image2, image3];
     self.menuTableView.dataSource = self;
