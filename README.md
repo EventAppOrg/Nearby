@@ -14,7 +14,7 @@ The following **required** functionality will be completed
 
 The following **optional** features will be implemented:
 * [ ] Users can send friend requests
-* [ ] Users can chat inside events
+* [x] Users can chat inside events
   * [ ] Users can post photos
 * [ ] Users can swipe to RSVP an event
 * [ ] User can filter events by date, type, number of people attending
