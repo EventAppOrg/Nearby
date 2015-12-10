@@ -7,12 +7,14 @@
 //
 
 #import "ChatPostTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ChatPostTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *chatContentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *chatDateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *chatImageView;
 
 
 @end
@@ -37,7 +39,14 @@
         self.chatDateLabel.text = @"";
     } else {
         self.userName.text = _eventChat.user.username;
-        self.chatContentLabel.text = _eventChat.chatContent;
+        if(_eventChat.imageUrl) {
+            NSURL *url = [NSURL URLWithString:_eventChat.imageUrl];
+            [self.chatImageView setImageWithURL:url];
+            self.chatContentLabel.text = @"Image uploaded";
+        } else {
+            self.chatContentLabel.text = _eventChat.chatContent;
+            [self.chatImageView removeFromSuperview];
+        }
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"d MMM yyyy h:mm a";
         NSString *dateValue = [formatter stringFromDate:_eventChat.createdAt];

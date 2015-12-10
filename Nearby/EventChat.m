@@ -13,6 +13,7 @@
 @dynamic event;
 @dynamic user;
 @dynamic chatContent;
+@dynamic imageUrl;
 
 + (NSString *)parseClassName {
     return @"EventChat";
@@ -46,5 +47,20 @@
         }
     }];
 }
+
++ (void)createEventChatForEvent:(Event *)event forUser:(PFUser *) user withImageUrl:(NSString *) imageUrl completion:(void (^)(EventChat *eventChat, NSError *error))completion {
+    EventChat *eventChat = [[EventChat alloc] init];
+    eventChat.event = event;
+    eventChat.user = user;
+    eventChat.imageUrl = imageUrl;
+    [eventChat saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(!error) {
+            completion(eventChat, nil);
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
 
 @end
