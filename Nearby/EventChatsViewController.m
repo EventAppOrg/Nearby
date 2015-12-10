@@ -56,7 +56,7 @@
     self.originalImage = info[UIImagePickerControllerOriginalImage];
     self.editedImage = info[UIImagePickerControllerEditedImage];
     [picker dismissViewControllerAnimated:YES completion:^{
-        NSData *imageData = UIImagePNGRepresentation(self.originalImage);
+        NSData *imageData = UIImageJPEGRepresentation(self.originalImage, 0.5);
         NSString *chatImageName = [NSString stringWithFormat:@"%@", [PFUser currentUser].username];
         PFFile *imageFile = [PFFile fileWithName:chatImageName data:imageData];
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
