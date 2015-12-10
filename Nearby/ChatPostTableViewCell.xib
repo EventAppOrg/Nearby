@@ -13,8 +13,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="379" height="270.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Last" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD6-aX-n4G">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="First Last" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD6-aX-n4G">
                         <rect key="frame" x="5" y="10" width="66.5" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66.5" id="TRs-Ne-xgg"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -25,7 +28,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJF-b2-W7v">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJF-b2-W7v">
                         <rect key="frame" x="79" y="10" width="222.5" height="31.5"/>
                         <string key="text">This is an absolutely amazing event.  
 Watch out for the final touch</string>
@@ -53,6 +56,7 @@ Watch out for the final touch</string>
                     <constraint firstItem="CIt-mZ-axO" firstAttribute="top" secondItem="cQy-GU-1in" secondAttribute="bottom" constant="10" id="3yz-kr-eiF"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CIt-mZ-axO" secondAttribute="bottom" constant="8" id="Adw-ra-eld"/>
                     <constraint firstItem="cQy-GU-1in" firstAttribute="top" secondItem="aJF-b2-W7v" secondAttribute="bottom" constant="7.5" id="Gyv-Zg-iuZ"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZD6-aX-n4G" secondAttribute="bottom" constant="5" id="NM4-8i-Y6R"/>
                     <constraint firstItem="ZD6-aX-n4G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ph0-pO-z4f"/>
                     <constraint firstItem="cQy-GU-1in" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="85" id="aaj-MM-CC6"/>
                     <constraint firstItem="aJF-b2-W7v" firstAttribute="leading" secondItem="ZD6-aX-n4G" secondAttribute="trailing" constant="8" id="ctP-CZ-wQZ"/>
