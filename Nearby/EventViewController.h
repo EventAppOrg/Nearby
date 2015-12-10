@@ -13,4 +13,8 @@
 
 @property (weak, nonatomic) PFUser *user;
 
+- (EventViewController*) initWithAllEvents;
+
+- (EventViewController*) initWithMyEvents;
+
 @end

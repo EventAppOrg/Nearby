@@ -19,10 +19,28 @@
 
 @property (strong, nonatomic) NSArray *events;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSInteger eventRequestType;
 
 @end
 
 @implementation EventViewController
+
+- (EventViewController*) initWithAllEvents {
+    self = [super init];
+    if(self) {
+        self.eventRequestType = 0;
+    }
+    return self;
+}
+
+- (EventViewController*) initWithMyEvents {
+    self = [super init];
+    if(self) {
+        self.eventRequestType = 1;
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     self.events = [[NSMutableArray alloc] init];
@@ -51,10 +69,17 @@
 }
 
 - (void) updateView {
-    [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
-        self.events = events;
-        [self.tableView reloadData];
-    }];
+    if(self.eventRequestType == 0) {
+        [Event getEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
+            self.events = events;
+            [self.tableView reloadData];
+        }];
+    } else {
+        [Event getMyEventsForUser: self.user completion:^(NSArray *events, NSError *error) {
+            self.events = events;
+            [self.tableView reloadData];
+        }];
+    }
 }
 
 - (void)addEvent {

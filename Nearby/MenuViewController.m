@@ -24,18 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [super viewDidLoad];
-    self.menuItems = @[@"All Events", @"Add Event", @"Log Out"];
-    EventViewController *viewController1 = [[EventViewController alloc] init];
+    self.menuItems = @[@"All Events", @"My Events", @"Add Event", @"Log Out"];
+    EventViewController *viewController1 = [[EventViewController alloc] initWithAllEvents];
     viewController1.user = [PFUser currentUser];
-    UIViewController *viewController2 = [[AddEventViewController alloc] init];
-    self.viewControllers = @[viewController1, viewController2];
+    EventViewController *viewController2 = [[EventViewController alloc] initWithMyEvents];
+    UIViewController *viewController3 = [[AddEventViewController alloc] init];
+    self.viewControllers = @[viewController1, viewController2, viewController3];
     [self.menuTableView registerNib:[UINib nibWithNibName:@"MenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"menuCell"];
     self.menuTableView.rowHeight = UITableViewAutomaticDimension;
     self.menuTableView.estimatedRowHeight = 60;
     UIImage *image1 = [UIImage imageNamed:@"ic_home"];
-    UIImage *image2 = [UIImage imageNamed:@"ic_plus_one"];
-    UIImage *image3 = [UIImage imageNamed:@"ic_exit_to_app"];
-    self.iconImages = @[image1, image2, image3];
+    UIImage *image2 = [UIImage imageNamed:@"ic_my_location"];
+    UIImage *image3 = [UIImage imageNamed:@"ic_plus_one"];
+    UIImage *image4 = [UIImage imageNamed:@"ic_exit_to_app"];
+    self.iconImages = @[image1, image2, image3, image4];
     self.menuTableView.dataSource = self;
     self.menuTableView.delegate = self;
 
