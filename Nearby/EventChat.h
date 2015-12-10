@@ -15,9 +15,12 @@
 @property (retain) Event* event;
 @property (retain) PFUser* user;
 @property (retain) NSString* chatContent;
+@property (retain) NSString* imageUrl;
 
 + (void)getEventChatsForEvent:(Event *)event completion:(void (^)(NSArray *eventChats, NSError *error))completion;
 
 + (void)createEventChatForEvent:(Event *)event forUser:(PFUser *) user withText:(NSString *) chatContent completion:(void (^)(EventChat *eventChat, NSError *error))completion;
+
++ (void)createEventChatForEvent:(Event *)event forUser:(PFUser *) user withImageUrl:(NSString *) imageUrl completion:(void (^)(EventChat *eventChat, NSError *error))completion;
 
 @end

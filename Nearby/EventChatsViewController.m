@@ -9,11 +9,14 @@
 #import "EventChatsViewController.h"
 #import "ChatPostTableViewCell.h"
 #import "EventChat.h"
+#import "MBProgressHUD.h"
 
-@interface EventChatsViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface EventChatsViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatsTableView;
 @property (strong, nonatomic) NSMutableArray *eventChats;
 @property (weak, nonatomic) IBOutlet UITextField *chatTextField;
+@property (strong, nonatomic) UIImage *originalImage;
+@property (strong, nonatomic) UIImage *editedImage;
 
 @end
 
@@ -35,6 +38,49 @@
 - (void) onCloseTapped {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 
+}
+
+- (IBAction)onCameraTapped:(UIButton *)sender {
+    UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
+    pickerController.delegate = self;
+    pickerController.allowsEditing = true;
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    [self presentViewController:pickerController animated:true completion:nil];
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info  {
+    self.originalImage = info[UIImagePickerControllerOriginalImage];
+    self.editedImage = info[UIImagePickerControllerEditedImage];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        NSData *imageData = UIImagePNGRepresentation(self.originalImage);
+        NSString *chatImageName = [NSString stringWithFormat:@"%@", [PFUser currentUser].username];
+        PFFile *imageFile = [PFFile fileWithName:chatImageName data:imageData];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeAnnularDeterminate;
+        hud.labelText = @"Uploading Image";
+        [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if(succeeded) {
+                [hud hide:YES];
+                [EventChat createEventChatForEvent:_event forUser:[PFUser currentUser] withImageUrl:[imageFile url] completion:^(EventChat *eventChat, NSError *error) {
+                    if(!error) {
+                        NSMutableArray* rows = [[NSMutableArray alloc] init];
+                        [rows addObject:eventChat];
+                        [self.eventChats insertObject:eventChat atIndex:0];
+                        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                        [self.chatsTableView beginUpdates];
+                        [self.chatsTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                        [self.chatsTableView endUpdates];
+                    }
+                }];
+            } else {
+                [hud hide:YES];
+            }
+        }];
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

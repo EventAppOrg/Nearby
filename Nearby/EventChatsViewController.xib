@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventChatsViewController">
@@ -24,25 +24,38 @@
                     <rect key="frame" x="0.0" y="523" width="320" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAo-Ox-sh8">
-                            <rect key="frame" x="11" y="8" width="37" height="21"/>
+                            <rect key="frame" x="11" y="8" width="36.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H1J-KH-pdI">
-                            <rect key="frame" x="53" y="4" width="263" height="30"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H1J-KH-pdI">
+                            <rect key="frame" x="53" y="4" width="221" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0X-yP-e8o">
+                            <rect key="frame" x="279" y="3" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="AvR-L1-Qk7"/>
+                                <constraint firstAttribute="width" constant="36" id="gcP-XJ-3XQ"/>
+                            </constraints>
+                            <state key="normal" image="ic_camera_alt"/>
+                            <connections>
+                                <action selector="onCameraTapped:" destination="-1" eventType="touchUpInside" id="7wx-Pl-tfg"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="X0X-yP-e8o" firstAttribute="leading" secondItem="H1J-KH-pdI" secondAttribute="trailing" constant="5" id="EvK-sa-Vm9"/>
                         <constraint firstItem="XAo-Ox-sh8" firstAttribute="leading" secondItem="Jo7-iz-pb1" secondAttribute="leading" constant="11" id="Fe5-Jt-RuZ"/>
                         <constraint firstItem="XAo-Ox-sh8" firstAttribute="top" secondItem="Jo7-iz-pb1" secondAttribute="top" constant="8" id="HaI-IU-rVM"/>
+                        <constraint firstItem="X0X-yP-e8o" firstAttribute="top" secondItem="Jo7-iz-pb1" secondAttribute="top" constant="3" id="Koc-Yw-ZeP"/>
                         <constraint firstItem="H1J-KH-pdI" firstAttribute="leading" secondItem="XAo-Ox-sh8" secondAttribute="trailing" constant="5" id="Y7z-dV-RxN"/>
                         <constraint firstItem="H1J-KH-pdI" firstAttribute="top" secondItem="Jo7-iz-pb1" secondAttribute="top" constant="4" id="Z33-IJ-6oB"/>
                         <constraint firstAttribute="height" constant="45" id="gZo-21-68d"/>
-                        <constraint firstAttribute="trailing" secondItem="H1J-KH-pdI" secondAttribute="trailing" constant="5" id="j5v-XD-EVA"/>
+                        <constraint firstAttribute="trailing" secondItem="X0X-yP-e8o" secondAttribute="trailing" constant="5" id="xaf-o1-oP4"/>
                     </constraints>
                 </view>
             </subviews>
@@ -59,4 +72,7 @@
             <point key="canvasLocation" x="318" y="295"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_camera_alt" width="24" height="24"/>
+    </resources>
 </document>
