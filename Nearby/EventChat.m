@@ -23,6 +23,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"event = %@", event];
     PFQuery *query = [EventChat queryWithPredicate:predicate];
     [query includeKey:@"user"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
             NSLog(@"Objects %@", objects);
