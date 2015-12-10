@@ -41,17 +41,22 @@
     self.maybeCountLabel.text = [[NSNumber numberWithLong:maybeUsers.count] stringValue];
     if(self.event.eventUsers) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"user.objectId==%@",[PFUser currentUser].objectId];
-        EventUser *eventUs = [[self.event.eventUsers filteredArrayUsingPredicate:predicate] objectAtIndex:0];
-        NSInteger status = [eventUs.status integerValue] - 1;
-        [self.userStatusControl setSelectedSegmentIndex:status];
+        NSArray *eventUsers = [self.event.eventUsers filteredArrayUsingPredicate:predicate];
+        if(eventUsers.count != 0) {
+            EventUser *eventUs = [eventUsers objectAtIndex:0];
+            NSInteger status = [eventUs.status integerValue] - 1;
+            if(status != 3) {
+                [self.userStatusControl setSelectedSegmentIndex:status];
+            }
+        }
     }
 }
 
 - (IBAction)onUserStatusChanged:(UISegmentedControl *)sender {
     NSNumber *status = [NSNumber numberWithInteger:self.userStatusControl.selectedSegmentIndex + 1];
     PFUser *currentUser = [PFUser currentUser];
-    if(self.event.eventUsers) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"user.objectId==%@",[PFUser currentUser].objectId];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"user.objectId==%@",[PFUser currentUser].objectId];
+    if(self.event.eventUsers && [self.event.eventUsers filteredArrayUsingPredicate:predicate].count != 0) {
         EventUser *eventUs = [[self.event.eventUsers filteredArrayUsingPredicate:predicate] objectAtIndex:0];
         if(eventUs) {
             [EventUser updateEventUser:eventUs withStatus:status completion:^(EventUser *eventUser, NSError *error) {
