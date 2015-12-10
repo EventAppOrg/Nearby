@@ -38,6 +38,10 @@
     } else {
         self.userName.text = _eventChat.user.username;
         self.chatContentLabel.text = _eventChat.chatContent;
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"d MMM yyyy h:mm a";
+        NSString *dateValue = [formatter stringFromDate:_eventChat.createdAt];
+        self.chatDateLabel.text = dateValue;
     }
 }
 
