@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventChat.h"
 
 @interface EventChatTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) NSArray *eventChats;
+@property (strong, nonatomic) NSMutableArray *eventChats;
+
+- (void) insertEventChat:(EventChat *)eventChat;
 
 @end

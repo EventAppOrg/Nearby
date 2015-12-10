@@ -18,7 +18,7 @@
 #import "EventChatTableViewCell.h"
 #import "EventChatsViewController.h"
 
-@interface EventDetailViewController () <UITableViewDataSource>
+@interface EventDetailViewController () <UITableViewDataSource, EventChatsViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 @property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *detailTableView;
 @property (nonatomic) NSInteger confirmedUsers;
 @property (nonatomic) NSInteger maybeUsers;
+@property (nonatomic, strong) EventChatTableViewCell *chatCell;
 @end
 
 @implementation EventDetailViewController
@@ -91,6 +92,7 @@
         return cell;
     } else {
         EventChatTableViewCell *cell = [self.detailTableView dequeueReusableCellWithIdentifier:@"eventChatCell"];
+        self.chatCell = cell;
         [EventChat getEventChatsForEvent:_event completion:^(NSArray *eventChats, NSError *error) {
             if(!error) {
                 cell.eventChats = eventChats;
@@ -107,8 +109,13 @@
     NSLog(@"Cell touched");
     EventChatsViewController *controller = [[EventChatsViewController alloc] init];
     controller.event = _event;
+    controller.delegate = self;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
     [self.navigationController presentViewController:nav animated:YES completion:nil];
+}
+
+- (void) eventChatsViewController:(EventChatsViewController *)eventChatsViewController didAddNewChat:(EventChat *)eventChat {
+    [self.chatCell insertEventChat:eventChat];
 }
 
 

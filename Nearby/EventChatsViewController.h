@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
+#import "EventChat.h"
+
+@class EventChatsViewController;
+
+@protocol EventChatsViewControllerDelegate <NSObject>
+
+- (void) eventChatsViewController:(EventChatsViewController *) eventChatsViewController didAddNewChat:(EventChat *) eventChat;
+
+@end
 
 @interface EventChatsViewController : UIViewController
 
 @property (nonatomic, strong) Event* event;
+
+@property (nonatomic, weak) id<EventChatsViewControllerDelegate> delegate;
 
 @end

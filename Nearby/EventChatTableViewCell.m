@@ -49,6 +49,16 @@
     return cell;
 }
 
+- (void) insertEventChat:(EventChat *)eventChat {
+    NSMutableArray* rows = [[NSMutableArray alloc] init];
+    [rows addObject:eventChat];
+    [_eventChats insertObject:eventChat atIndex:0];
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.chatTableView beginUpdates];
+    [self.chatTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.chatTableView endUpdates];
+    [self.chatTableView reloadData];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -57,7 +67,7 @@
 }
 
 - (void) setEventChats:(NSArray *)eventChats {
-    _eventChats = eventChats;
+    _eventChats = [eventChats mutableCopy];
     [self.chatTableView reloadData];
 }
 

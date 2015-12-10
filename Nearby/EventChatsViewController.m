@@ -148,6 +148,7 @@
                 [self.chatsTableView beginUpdates];
                 [self.chatsTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
                 [self.chatsTableView endUpdates];
+                [self.delegate eventChatsViewController:self didAddNewChat:eventChat];
             }
         }];
     }
