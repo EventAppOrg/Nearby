@@ -102,6 +102,7 @@
                 <outlet property="distanceLabel" destination="Ex7-37-nJQ" id="Mro-hg-YiL"/>
                 <outlet property="eventImageView" destination="8Hq-6r-BNa" id="j9C-eu-60F"/>
                 <outlet property="eventTitleLabel" destination="s92-E9-3l0" id="Ffa-54-uT6"/>
+                <outlet property="inviteLabel" destination="pae-2Q-Wqu" id="BLL-tw-7L8"/>
             </connections>
             <point key="canvasLocation" x="273" y="371"/>
         </tableViewCell>

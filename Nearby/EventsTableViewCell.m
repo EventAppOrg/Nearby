@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateTimeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
+@property (weak, nonatomic) IBOutlet UILabel *inviteLabel;
 
 @end
 
@@ -53,6 +54,17 @@
         url = [NSURL URLWithString:@"http://www.qatarvision.com/images/services/events/event-services-banner.jpg"];
     }
     [self.eventImageView setImageWithURL:url];
+    predicate = [NSPredicate predicateWithFormat:@"status==%ld", 4];
+    if(self.event.eventUsers && [self.event.eventUsers filteredArrayUsingPredicate:predicate].count != 0) {
+        EventUser *eventUser = [[self.event.eventUsers filteredArrayUsingPredicate:predicate] objectAtIndex:0];
+        if([eventUser.status integerValue] == 4) {
+            self.inviteLabel.alpha = 1;
+        } else {
+            self.inviteLabel.alpha = 0;
+        }
+    } else {
+        self.inviteLabel.alpha = 0;
+    }
 //    self.dateTimeLabel.text = event.eventDate;
 }
 
